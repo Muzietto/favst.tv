@@ -1,0 +1,1240 @@
+/******************************************************************
+Site Name: Wild Beasts
+Author: 020 7
+
+Stylesheet: Main Stylesheet
+******************************************************************/
+
+/******************************************************************
+******************************************************************
+******************************************************************
+******************************************************************
+******************************************************************
+******************************************************************
+BASE STYLE SHEET
+******************************************************************/
+
+
+/******************************************************************
+TYPOGRAPHY
+******************************************************************/
+@font-face {
+  font-family: 'walsheim';
+  src: url("webfonts/gt-walsheim-medium-web.eot");
+  src: url("webfonts/gt-walsheim-medium-web.eot?#iefix") format("embedded-opentype"), url("webfonts/gt-walsheim-medium-web.woff") format("woff"), url("webfonts/gt-walsheim-medium-web.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+body{font-family:'walsheim',sans-serif;letter-spacing:.2em;background:#A4A3A4}
+
+ h3{
+	font-size:1em;
+	color:white;
+	/*border-top:1px solid white;*/
+	width:100%;
+	display:inline-block;
+	margin:0px 0px 1.5em;
+	font-weight:normal;
+    font-style: normal;
+	text-transform:capitalize;
+}
+
+/*links*/
+a{color:#fff;text-decoration:none;display:inline;}
+a:hover{color:yellow;cursor:pointer;}
+a.selected{color:yellow;}
+
+.small{
+	font-size:..5em;
+	}
+
+/******************************************************************
+GENERAL
+******************************************************************/
+
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+/*clearfix*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats.*/
+.cf {
+    *zoom: 1;
+}
+
+
+
+
+/******************************************************************
+RESPONSIVE LAYOUT SHIZENS
+******************************************************************/
+
+/*horizontal layout styles for non-mobile devices*/
+.no-touch body{
+	width:1000%;
+}
+
+.no-touch .column, .no-touch .divider-column{
+ 	width:10%;
+}
+
+
+/*vertical layout for mobile devices*/
+
+body{
+	width:100%;
+}
+
+.column, .divider-column{
+	width:100%;
+}
+
+
+	
+/******************************************************************
+COLOUR GRID AND DIVIDER BACKGROUNDS
+******************************************************************/
+#home{background:url('img/backgrounds-3/turquoise.png');}
+#home-1{background-image:url('img/backgrounds-3/med-grey.png');}
+#home-split-1{background-image:url('img/backgrounds-3/home-split-1.png');}
+#home-2{background-image:url('img/backgrounds-3/blue.png'); }
+#home-split-2{background-image:url('img/backgrounds-3/home-split-2.png');}
+
+#split-1-col{background-image:url('img/backgrounds-3/purple.png');}
+#split-1{background-image:url('img/backgrounds-3/split-1.png');}
+
+#news{background-image:url('img/backgrounds-3/pink.png'); }
+#news-list{background-image:url('img/backgrounds-3/turquoise.png'); }
+#news-split-1{background-image:url('img/backgrounds-3/split-2.png');}
+.single-post .page{background-image:url('img/backgrounds-3/turquoise.png'); }
+
+#split-2-col{background-image:url('img/backgrounds-3/med-grey.png');}
+#split-2{background-image:url('img/backgrounds-3/split-2.png');}
+
+#shows{background-image:url('img/backgrounds-3/blue.png'); }
+#shows-list{background-image:url('img/backgrounds-3/pink.png'); }
+#shows-split-1{background-image:url('img/backgrounds-3/shows-split.png');}
+
+
+#split-3-col{background-image:url('img/backgrounds-3/turquoise.png');}
+#split-3{background-image:url('img/backgrounds-3/split-3.png');}
+
+#discography{background-image:url('img/backgrounds-3/purple.png'); }
+#discography-list{background-image:url('img/backgrounds-3/blue.png'); }
+#discography-split-1{background-image:url('img/backgrounds-3/split-4.png');}
+.single-discography .page{background-image:url('img/backgrounds-3/blue.png'); }
+
+
+#split-4-col{background-image:url('img/backgrounds-3/pink.png');}
+#split-4{background-image:url('img/backgrounds-3/split-4.png');}
+
+#videos{background-image:url('img/backgrounds-3/blue.png'); }
+#video-list{background-image:url('img/backgrounds-3/purple.png'); }
+#video-split-1{background-image:url('img/backgrounds-3/video-split.png');}
+.single-video .page{background-image:url('img/backgrounds-3/purple.png'); }
+
+
+
+#end-col{background-image:url('img/backgrounds-3/med-grey.png'); }
+#end{background-image:url('img/backgrounds-3/split-5.png'); }
+
+
+
+
+/*****************************************************************
+******************************************************************
+******************************************************************
+MOBILE
+******************************************************************
+******************************************************************
+******************************************************************/
+
+
+/******************************************************************
+GENERAL 
+******************************************************************/
+
+@font-face {
+  font-family: 'gt-walsheim';
+  src: url("webfonts/gt-walsheim-medium-web.eot");
+  src: url("webfonts/gt-walsheim-medium-web.eot?#iefix") format("embedded-opentype"), url("webfonts/gt-walsheim-medium-web.woff") format("woff"), url("webfonts/gt-walsheim-medium-web.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+body{font-family:'gt-walsheim',sans-serif;letter-spacing:.15em;color:#ffffff;}
+
+
+html{ height:100%}
+ 
+body {
+	height:100%; 
+	margin: 0; 
+	overflow-x:hidden;
+}
+
+p{margin:0 0 1em 0;}
+
+/******************************************************************
+MENU 
+******************************************************************/
+
+/*for mobile devices*/
+#menu-button, #back-button{
+	display:block;
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:60px;
+	background:red;
+	opacity:.5;
+	z-index:100000;
+	cursor:pointer;
+	padding:15px;
+	font-size:1.5em;
+	color:white;
+}
+
+#menu{
+	z-index:200000;
+	display:none;
+	position:fixed;
+	top:0px;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#9a6198;
+	}
+
+#menu.open{
+	display:block;
+	}
+ 
+#menu ul{
+	margin-top:60px;
+	padding:0;
+	height:100%;
+	color:white;
+}
+
+#menu li{
+	font-size:1.5em;
+	margin-bottom:.5em;
+	text-align:center;
+	display: block;
+	zoom: 1;
+	color:white;
+}
+
+
+/******************************************************************
+PAGES & COLUMNS
+******************************************************************/
+
+	
+
+
+.column{
+	min-height:100%;
+	display:block-inline;
+	float:left;
+}
+
+.divider-column{display:none;}
+.no-touch .divider-column{display:block;}
+
+.page{
+	padding:90px 15px 60px; 
+	width:100%;
+ 	overflow:auto;
+	display:block; 
+	position:relative;
+	float:left;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size:100% 100%; 
+	background-repeat:no-repeat;
+	background-position:center center;
+ 	}
+
+
+
+/****PAGE FOOTER****/
+
+.next{font-size:18px;}
+.next:hover{cursor:pointer;}
+
+.page-footer{
+	bottom:10px;
+	left:0px;
+	position:absolute;
+	font-size:1em;
+ 	color:white;
+	padding:.3em 15px .3em;
+ 	width:100%;
+	display:block;
+}
+
+.page-footer a{
+	padding: 0 .5em 0 0;
+	font-size:18px;
+}
+
+.archive-link-img{
+	background-image:url('img/archive.png');
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+	background-repeat:no-repeat;
+	background-position:top left;
+	height:16px;width:21px;
+	margin: .5em 7px .5em 0px;
+	float:left;
+}
+ .archive-link-img:hover{	background-image:url('img/archive-hover.png');
+}
+
+.archive-link-text{
+	line-height:35px; 
+	font-size:18px;
+}
+
+a.archive-link:hover + .archive-link-img{
+	background-image:url('img/archive-hover.png');
+}
+
+/******************************************************************
+LANDING PAGE
+******************************************************************/
+.no-js #loader{display:none;}
+
+#loader{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background:#A4A3A4;
+	z-index:500000;
+}
+
+.landing-page{
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+
+#landing-container{
+	width:100%;
+	height:100%;
+	top:0;left:0;
+	position:absolute;
+	display:block;
+	padding: 180px 40px 180px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+
+#landing{
+	  width: 100%;
+	  height : 100%;
+	float:left;
+	background-size: contain;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-repeat:no-repeat;
+	background-position:center center;}
+/*	
+#landing{
+margin:30px 0 30px;
+width:100%;
+height:100%;
+float:left;
+text-align:center;
+}*/
+
+#landing img{
+  width: auto;
+  height : auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.social-buttons{
+position:absolute;
+bottom:40px;left:0px;
+width:100%;
+text-align:center;
+}
+
+.social-buttons iframe{
+ }
+
+#home .page-footer{
+	position:static;
+	float:left;
+}
+
+.inner-footer {
+	border-top:1px solid white;
+	padding-top:3px;
+}
+
+#home .page-footer a{
+	display:block;
+	text-align:left;
+	width:100%;
+}
+
+#home a.arrow-link{display:none;}
+
+/******************************************************************
+SUBSCRIBE FORM
+******************************************************************/
+
+.email{
+	width:100%;
+	background:transparent;
+	color:#ffffff;
+	border:2px solid white;
+	margin-bottom:.75em;
+	padding: 0 5px 0;
+	height:2em;
+}
+
+.subscribe-button{
+	height:2em;
+	width:150px;
+	background:transparent;
+	color:#ffffff;
+	border:2px solid white;
+	margin-bottom:.5em;
+}
+
+.subscribe-button:hover{
+	color:yellow;
+	border:2px solid yellow;
+	margin-bottom:.5em;
+}
+
+/******************************************************************
+NEWS
+******************************************************************/
+
+
+/*news list*/
+#news ul{
+	list-style:none;
+	margin:0 0 2em ;
+	padding:0;
+	}
+
+#news ul li{
+	border-top:1px solid white;
+}
+#news ul li:last-child{
+	border-bottom:1px solid white;
+}
+
+#news ul li{
+	min-height:90px;
+	font-size:1em;
+ 	color:white;
+	padding:.3em 0 .3em;
+	width:100%;
+	display:block;	
+}
+
+#news ul li:hover{
+	cursor:pointer;
+	color:yellow;
+	}
+
+.news-thumb{
+	width:100%;
+	margin: .5em 15px 1em 0px;
+	float:left;
+}
+
+.news-title{
+	font-size:1.5em;
+ 	float:left;
+	padding-top:.5em;
+	width:100%;
+ }
+
+.news-date{
+  	float:left;
+	text-transform:capitalize;	
+	width:100%;
+	padding-bottom:1em;
+}
+	
+.news-body {
+ 	float:left;
+	width:100%;
+}	
+	
+			
+.read-more{
+	margin-top:.5em;
+	margin-bottom:1em;
+	font-size:1em;
+	text-align:left;
+	width:auto;
+	height:auto;
+	float:left;
+	width:100%;
+	text-transform:capitalize;
+}
+
+
+/*news page*/
+.text-column h2{
+	margin-bottom:1em;
+	margin-top:0;
+	font-weight: normal;
+  	font-style: normal;
+}
+	
+.image-column img{
+	width:100%;
+	height:auto;
+	margin-bottom:1em;
+	padding-bottom:1em;
+	}	
+	
+/******************************************************************
+SHOWS
+******************************************************************/
+
+
+#shows ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+	}
+
+
+#shows ul li{
+	min-height:3em;
+	font-size:1em;
+	line-height:1.5;
+	padding:.3em 0 .3em;	
+	color:white;
+	border-top:1px solid white;
+	width:100%;
+	display:block;
+	margin-bottom:1.5em;
+}
+
+#shows ul li:last-child{
+	border-bottom:1px solid white;
+	padding-bottom:1.5em;
+}
+
+.date{
+	font-size:1.5em;
+	margin-bottom:.em;
+	float:left;
+	width:100%;
+	display:inline-block;
+	}
+
+.country, .venue{
+ 	float:left;
+	display:block;
+	width:100%;
+	text-transform:capitalize;
+	}	
+
+.buy{
+	margin-top:.5em;
+	font-size:1.5em;
+	width:100%;
+	text-align:left;
+	float:left;
+
+}
+
+.buy:hover{
+ }
+
+
+/******************************************************************
+DISCOGRAPHY
+******************************************************************/
+
+
+#discography ul{
+	list-style:none;
+	margin:0 0 3em ;
+	padding:0;
+	}
+
+
+#discography ul li{
+	min-height:90px;
+	font-size:1em;
+	padding:.3em 0 .3em;	
+ 	color:white;
+	border-top:1px solid white;
+	width:100%;
+	display:block;
+}
+
+#discography ul li:last-child{
+	border-bottom:1px solid white;
+
+ }
+
+.artwork{
+	width:70%;
+	height:auto;
+	margin: .5em 15px 1em 0px;
+	float:left;
+}
+
+.name{
+	font-size:1.5em;
+ 	margin-right:.3em;
+	float:left;
+	width:100%;
+	}
+
+.label, .release-date{
+ 	width:100%;
+ 	float:left;
+	text-transform:capitalize;
+	}
+			
+a.disco-buy{
+	padding-top:2px;
+	margin-top:.5em;
+	font-size:1em;
+	text-align:left;
+	width:auto;
+	height:auto;
+	float:left;
+	width:100%;
+	text-transform:capitalize;
+}
+
+.more-info{
+	padding-top:2px;
+	font-size:1em;
+	text-align:left;
+	width:auto;
+	height:auto;
+	float:left;
+	width:100%;
+	text-transform:capitalize;
+	margin-bottom:1em;
+	
+}
+
+a.listen{
+	padding-top:2px;
+	font-size:1em;
+	text-align:left;
+	width:auto;
+	height:auto;
+	float:left;
+	width:100%;
+	text-transform:capitalize;
+	
+}
+
+a.buy:hover{
+ }
+
+.links{
+	margin-top:1em;
+	display:block;
+	float:left;
+	width:100%;
+}
+.links a{
+	font-size:1.5em;
+	float:left;
+	clear:none;
+	margin-right:1em;
+}
+
+/******************************************************************
+VIDEOS
+******************************************************************/
+
+
+/*video list styles*/
+#videos ul{
+	list-style:none;
+	margin:0 0 2em ;
+	padding:0;
+	}
+
+#videos ul li{
+	border-top:1px solid white;
+}
+#videos ul li:last-child{
+	border-bottom:1px solid white;
+}
+
+#videos ul li{
+	min-height:90px;
+	font-size:1em;
+ 	color:white;
+	padding:.3em 0 .3em;
+	width:100%;
+	display:block;
+	padding-bottom:1.5em;
+}
+
+#videos ul li:hover{
+	cursor:pointer;
+	color:yellow;
+	}
+ 
+.video-name{
+	font-size:1.5em;
+}
+
+ 
+.watch{
+	display:none;
+}
+	
+
+
+
+/*video page styles*/
+.video-wrapper{
+	width:100%;
+	max-width:800px;
+	margin:0 auto 0;
+}
+
+.video-container {
+	height:100%;max-width:800px;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container .youtube,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+border:none;
+}
+
+.youtube .play:hover{
+	filter:alpha(opacity=70);
+	opacity:.7;
+}
+
+.video-holder{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.play-button{
+	width:50px;height:50px;
+	background-image:url('img/play-button.png');
+	position:absolute;
+	top:50%;left:50%;
+	margin: -25px 0 0 -25px;
+	cursor:pointer;
+	}
+
+.play-button:hover{
+	opacity:.7;}
+
+
+.video-description{
+	display:block;
+	float:left;
+	margin-top:1em;
+	font-size:.875em;
+	line-height:1.5em;
+}
+
+
+
+
+
+/******************************************************************
+	
+	BOTH DESKTOPS AND TABLETS USE THESE...
+	
+******************************************************************/	
+
+@media screen and (min-width: 600px) {
+
+
+/******************************************************************
+GENERAL
+******************************************************************/
+
+	body {width:100%;font-size:16px;}
+
+/******************************************************************
+LANDING PAGE
+******************************************************************/
+
+
+
+#home .page-footer{
+	position:absolute;
+	float:none;
+}
+
+#home .page-footer a{
+	display:inline;
+	text-align:left;
+	width:auto;
+	font-size:.875em;
+}
+
+.social-links{
+float:right;
+text-align:right;
+
+}
+
+.social-links a{
+ padding:0 0 0 .5em;
+}
+
+#home a.arrow-link{
+	position:absolute;
+	width:13px;
+	height:20px;
+	top:15px;
+	left:50%;
+	margin-left:-7px;
+	background:url('img/arrow2.png');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+
+/******************************************************************
+NEWS
+******************************************************************/
+
+
+
+/*news list*/
+
+#news ul li{
+	min-height:90px;
+	font-size:1em;
+ 	color:white;
+	padding:.3em 0 .3em;
+	width:100%;
+	display:block;
+}
+
+
+.news-details{
+padding-top:2px;
+padding-top:2px;
+width:70%;
+float:left;
+}
+
+.news-thumb{
+	width:50%;
+	/*max-width:120px;*/
+	height:auto;
+	margin: .5em 0 .5em 0px;
+	float:left;
+}
+
+.news-title{
+	font-size:1.5em;
+ 	float:left;
+	padding-top:0;
+ }
+
+.news-date{
+  	float:left;
+	text-transform:capitalize;	
+}
+				
+
+
+/* news page*/
+
+.text-column, .image-column{
+	width:50%;float:left;
+	}
+
+.image-column{
+	padding-right:20px;
+	}
+
+.image-column img{
+	width:100%;
+	height:auto;
+	}
+
+.text-column{
+	padding-left:20px;
+	}
+
+
+
+
+
+
+/******************************************************************
+SHOWS
+******************************************************************/
+.show-details{
+	width:50%;
+	float:left;
+	}
+
+.date{
+	font-size:1.5em;
+	margin-bottom:0;
+	float:left;
+	width:100%;
+	display:block;
+	}
+
+.country, .venue{
+ 	float:left;
+	clear:left;
+	display:block;
+	width:100%;
+	text-transform:capitalize;
+	}	
+
+.buy{
+	margin-top:0em;
+	font-size:1.5em;
+	width:50%;
+	text-align:right;
+	float:right;
+
+}
+
+.buy:hover{
+ }
+
+
+
+/******************************************************************
+DISCOGRAPHY
+******************************************************************/
+
+ 
+
+
+#discography ul li{
+	min-height:90px;
+	font-size:1em;
+ 	color:white;
+	padding:.3em 0 .3em;
+	border-top:1px solid white;
+	width:100%;
+	display:block;
+	margin-bottom:.3em;
+}
+
+#discography ul li:last-child{
+	border-bottom:1px solid white;
+
+ }
+
+
+.disc-details{
+	padding-top:2px;
+	width:40%;
+	float:left;
+}
+
+.artwork{
+	width:auto;
+	height:90px;
+	margin: .5em 15px .5em 0px;
+	float:left;
+}
+
+.name{
+	font-size:1.5em;
+	float:left;
+	width:100%;
+	}
+
+.label, .release-date{
+ 	width:100%;
+ 	float:left;
+	margin-bottom:2px;
+	text-transform:capitalize;
+	}	
+
+a.more-info, a.disco-buy, a.listen{
+	font-size:1.5em;
+	text-align:right;
+	width:auto;
+	height:auto;
+	float:right;
+	margin-left:20px;
+	margin-top:0;
+}
+
+
+a.buy:hover{
+ }
+
+
+/******************************************************************
+VIDEOS
+******************************************************************/
+
+
+/*video list styles*/
+
+
+#videos ul li{
+	min-height:90px;
+	font-size:1em;
+ 	color:white;
+	padding:.3em 0 .3em;
+	width:100%;
+	display:block;
+	padding-bottom:0em;
+}
+
+
+
+#videos ul li:last-child{
+ 
+ }
+
+.video-thumb{
+}
+
+.video-name{
+	font-size:1.5em;
+}
+
+.year{
+}
+
+.watch{
+	display:none;
+}
+
+.video-description{
+width:50%;
+}
+
+}/*****end tablet mobile styles******/
+
+
+
+/*****************************************************************
+******************************************************************
+******************************************************************
+DESKTOP
+******************************************************************
+******************************************************************
+*****************************************************************/
+
+@media screen and (min-width: 800px) {
+
+body{font-size:15px;}
+
+/******************************************************************
+MENU for desktop
+******************************************************************/
+
+.no-touch #menu-button, .no-touch #back-button{display:none;}
+
+.no-touch #menu{
+	position:fixed;
+	top:0;left:0;
+	width:100%; 
+	height:auto;
+	background:transparent;
+	padding:40px 40px 40px; 
+	text-align:justify; 
+	font-size:20px;
+	z-index:10000;
+	display:block;
+	list-style:none;
+	opacity:1;
+	}
+	
+.no-touch #menu ul{
+	margin:0;
+	padding:0;
+}
+	
+.no-touch #menu li{
+	margin:0;
+	font-size:1em;
+	display:inline-block;
+	*display:inline;
+	zoom: 1;
+}
+
+.no-touch #menu ul:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+ 
+.selected a{color:yellow;}
+
+.no-touch .page{
+	padding:140px 40px 60px;
+	}
+
+.no-touch .page-footer{
+	position:absolute;
+	font-size:1em;
+ 	color:white;
+	padding:.3em 40px .3em;
+ 	display:block;
+	bottom:25px;
+}
+
+
+
+
+/******************************************************************
+LANDING PAGE
+******************************************************************/
+
+
+
+
+/******************************************************************
+SHOWS
+******************************************************************/
+.show-details{
+	width:80%;
+	float:left;
+	}
+
+.date{
+	font-size:1.5em;
+	margin-bottom:0;
+	float:left;
+	height:3em;
+	width:30%;
+	display:inline;
+	}
+
+.country{font-size:1.5em;}
+
+.country, .venue{
+	padding-right:30px;
+ 	float:left;
+	display:block;
+	clear:none;
+	width:70%;
+	text-transform:capitalize;
+	}	
+
+.buy{
+	margin-top:0em;
+	font-size:1.5em;
+	width:20%;
+	text-align:right;
+	float:right;
+
+}
+
+.buy:hover{
+ }
+
+
+
+
+
+/******************************************************************
+DISCOGRAPHY
+******************************************************************/
+
+.disc-details{width:53%;}
+
+
+
+
+
+
+
+
+}
+/* END DESKTOP 800px */	
+
+
+/******************************************************************
+LARGE SCREEN TYPE SIZES
+******************************************************************/
+
+
+@media screen and (min-width: 1000px) {
+
+body{font-size:16px;}
+
+.no-touch #menu{font-size:26px;background:transparent;}
+
+}
+/* END DESKTOP 1000px */	
+
+
+@media screen and (min-width: 1300px) {
+	
+body{font-size:18px;}
+.no-touch #menu{font-size:28px;background:transparent;}
+
+}
+/* END DESKTOP 1300px */
+
+@media screen and (min-width: 1600px) {
+	
+body{font-size:20px;}
+.no-touch #menu{font-size:32px;background:transparent;}
+
+}
+/* END DESKTOP 1300px */
