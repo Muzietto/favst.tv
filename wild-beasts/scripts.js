@@ -30,10 +30,7 @@ function goBack()
   window.history.back()
   }
 
-
-
 /*NEXT BUTTON*/
-
 $(".next").on("click", function(e) {
     container = $(this).parent();
 
@@ -52,6 +49,26 @@ $(".next").on("click", function(e) {
     //$(document).scrollTop(nextdiv.offset().top);
     $('html, body').animate({scrollTop:nextdiv.offset().top},600);
     // $(this).parent().next() // this is the next div container.
+    return false;
+});
+
+/*NEXT-RIGHT BUTTON*/
+$(".next-right").on("click", function(e) {
+    container = $(this).parent();
+
+    // am I the last .container in my group?
+    while (document != container[0] && container.find('~.next-item-right, ~:has(.next-item-right)').length == 0) {
+        container = container.parent(); // if so, search siblings of parent instead
+    }
+
+    nextdiv = container.nextAll('.next-item-right, :has(.next-item-right)').first();
+    
+    // no next .container found, go back to first container
+    if (nextdiv.length==0) {
+      nextdiv = $(document).find('.next-item-right:first');
+    }
+    
+    $('html, body').animate({scrollLeft:nextdiv.offset().left},600);
     return false;
 });
 
