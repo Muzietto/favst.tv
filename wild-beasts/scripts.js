@@ -2,7 +2,8 @@
 var responsive_viewport = $(window).width();
 
 /* add window height as min-height to all pages and splitters*/
-$(function(){
+$(function(){ // is this $(document).ready() ?
+
     $('.page').css({'min-height':(($(window).height()))+'px'});
     $('.split').css({'min-height':(($(window).height()))+'px'});
 
@@ -37,13 +38,16 @@ $(".next").on("click", function(e) {
     container = $(this).parent();
 
     // am I the last .container in my group?
-    while (document != container[0] && container.find('~.page, ~:has(.next-item)').length == 0)
+    while (document != container[0] && container.find('~.page, ~:has(.next-item)').length == 0) {
         container = container.parent(); // if so, search siblings of parent instead
+    }
 
     nextdiv = container.nextAll('.next-item, :has(.next-item)').first();
     
     // no next .container found, go back to first container
-    if (nextdiv.length==0) nextdiv = $(document).find('.next-item:first');
+    if (nextdiv.length==0) {
+      nextdiv = $(document).find('.next-item:first');
+    }
     
     //$(document).scrollTop(nextdiv.offset().top);
     $('html, body').animate({scrollTop:nextdiv.offset().top},600);
