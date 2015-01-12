@@ -87,6 +87,7 @@ RESPONSIVE LAYOUT SHIZENS
 	width:1000%;
 }
 
+/* between vertical sections */
 .no-touch .column, .no-touch .divider-column{
  	width:10%;
 }

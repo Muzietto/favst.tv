@@ -1,0 +1,208 @@
+/******************************************************************
+******************************************************************
+BASE STYLE SHEET
+******************************************************************/
+
+/******************************************************************
+TYPOGRAPHY
+******************************************************************/
+@font-face {
+  font-family: 'walsheim';
+  src: url("webfonts/gt-walsheim-medium-web.eot");
+  src: url("webfonts/gt-walsheim-medium-web.eot?#iefix") format("embedded-opentype"), url("webfonts/gt-walsheim-medium-web.woff") format("woff"), url("webfonts/gt-walsheim-medium-web.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+body{font-family:'walsheim',sans-serif;letter-spacing:.2em;background:#A4A3A4}
+
+ h3{
+	font-size:1em;
+	color:white;
+	width:100%;
+	display:inline-block;
+	margin:0px 0px 1.5em;
+	font-weight:normal;
+  font-style: normal;
+	text-transform:capitalize;
+}
+
+/*links*/
+a{color:#fff;text-decoration:none;display:inline;}
+a:hover{color:yellow;cursor:pointer;}
+a.selected{color:yellow;}
+
+.small{
+	font-size:..5em;
+	}
+
+/******************************************************************
+GENERAL
+******************************************************************/
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+/*clearfix*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats.*/
+.cf {
+    *zoom: 1;
+}
+
+/******************************************************************
+RESPONSIVE LAYOUT SHIZENS
+******************************************************************/
+
+/*horizontal layout styles for non-mobile devices*/
+.no-touch body{
+	width:1000%;
+}
+
+.no-touch .column {
+ 	width:10%;
+}
+
+.no-touch .row {
+ 	height:100%;
+}
+
+.no-touch .split-vertical {
+ 	width:10%;
+  background-size: 100% 100%;
+}
+
+.no-touch .split-horizontal {
+ 	height:10%;
+  background-size: 100% 100%;
+}
+
+/*vertical layout for mobile devices*/
+body{
+//	width:100%;
+}
+
+ .split-vertical{
+//	width:100%;
+}
+
+
+/******************************************************************
+PAGES & COLUMNS
+******************************************************************/
+
+.column{
+	min-height:100%;
+	display:block-inline;
+	float:left;
+}
+
+.split-vertical{display:none;}
+.no-touch .split-vertical{display:block;}
+
+.page{
+	padding:90px 15px 60px; 
+	width:100%;
+ 	overflow:auto;
+	display:block; 
+	position:relative;
+	float:left;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size:100% 100%; 
+	background-repeat:no-repeat;
+	background-position:center center;
+ 	}
+
+
+
+
+/******************************************************************
+COLOUR GRID AND DIVIDER BACKGROUNDS
+******************************************************************/
+.bkg_turquoise  {
+  background:url('img/backgrounds/turquoise.png');
+}
+.bkg_pink_turquoise  {
+  background:url('img/backgrounds/pink_turquoise.png');
+}
+.bkg_pink  {
+  background:url('img/backgrounds/pink.png');
+}
+.bkg_grey_pink  {
+  background:url('img/backgrounds/grey_pink.png');
+}
+.bkg_grey  {
+  background:url('img/backgrounds/grey.png');
+}
+.bkg_blue_grey  {
+  background:url('img/backgrounds/blue_grey.png');
+}
+.bkg_blue  {
+  background:url('img/backgrounds/blue.png');
+}
+.bkg_pink_blue  {
+  background:url('img/backgrounds/pink_blue.png');
+}
+.bkg_blue_pink  {
+  background:url('img/backgrounds/blue_pink.png');
+}
+.bkg_turquoise_pink  {
+  background:url('img/backgrounds/turquoise_pink.png');
+}
+.bkg_blue_turquoise  {
+  background:url('img/backgrounds/blue_turquoise.png');
+}
+
+/******************************************************************
+	
+	BOTH DESKTOPS AND TABLETS USE THESE...
+	
+******************************************************************/	
+@media screen and (min-width: 600px) {
+
+}/*****end tablet mobile styles******/
+
+/*****************************************************************
+******************************************************************
+******************************************************************
+DESKTOP
+******************************************************************
+******************************************************************
+*****************************************************************/
+@media screen and (min-width: 800px) {
+
+}
+/* END DESKTOP 800px */	
+
+/******************************************************************
+LARGE SCREEN TYPE SIZES
+******************************************************************/
+@media screen and (min-width: 1000px) {
+
+body{font-size:16px;}
+}
+/* END DESKTOP 1000px */	
+
+
+@media screen and (min-width: 1300px) {
+body{font-size:18px;}
+}
+/* END DESKTOP 1300px */
+
+@media screen and (min-width: 1600px) {
+body{font-size:20px;}
+}
+/* END DESKTOP 1300px */
