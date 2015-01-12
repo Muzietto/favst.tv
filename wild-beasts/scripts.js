@@ -30,52 +30,60 @@ function goBack()
   window.history.back()
   }
 
+  // swiping function
+var swiper = function(finderString, allSelectorString, singleSelectorString, scrollTarget) {
+  return function(e) {
+      container = $(this).parent();
+
+      // am I the last .container in my group?
+      while (document != container[0] && container.find(finderString).length == 0) {
+          container = container.parent(); // if so, search siblings of parent instead
+      }
+
+      nextdiv = container.nextAll(allSelectorString).first();
+      
+      // no next .container found, go back to first container
+      if (nextdiv.length==0) {
+        nextdiv = $(document).find(singleSelectorString);
+      }
+
+      var scrollObject = {};
+
+      try {
+        scrollObject = (scrollTarget==='scrollTop') ? { scrollTop:nextdiv.offset().top } : { scrollLeft:nextdiv.offset().left };
+      } catch (err) {}
+
+      setTimeout(function(){$('html, body').animate(scrollObject, 600);},2);
+      
+      return false;
+  };
+};
+
+var verticalSwiper = function() {
+  return swiper('~.page, ~:has(.next-item)','.next-item, :has(.next-item)','.next-item:first','scrollTop');
+}
+
+var horizontalSwiper = function() {
+  return swiper('~.next-item-right, ~:has(.next-item-right)','.next-item-right, :has(.next-item-right)','.next-item-right:first','scrollLeft')
+}
+
 /*NEXT BUTTON*/
-$(".next").on("click", function(e) {
-    container = $(this).parent();
-
-    // am I the last .container in my group?
-    while (document != container[0] && container.find('~.page, ~:has(.next-item)').length == 0) {
-        container = container.parent(); // if so, search siblings of parent instead
-    }
-
-    nextdiv = container.nextAll('.next-item, :has(.next-item)').first();
-    
-    // no next .container found, go back to first container
-    if (nextdiv.length==0) {
-      nextdiv = $(document).find('.next-item:first');
-    }
-    
-    //$(document).scrollTop(nextdiv.offset().top);
-    $('html, body').animate({scrollTop:nextdiv.offset().top},600);
-    // $(this).parent().next() // this is the next div container.
-    return false;
-});
-
+$(".next").on("click", verticalSwiper());
 /*NEXT-RIGHT BUTTON*/
-$(".next-right").on("click", function(e) {
-    container = $(this).parent();
+$(".next-right").on("click", horizontalSwiper());
 
-    // am I the last .container in my group?
-    while (document != container[0] && container.find('~.next-item-right, ~:has(.next-item-right)').length == 0) {
-        container = container.parent(); // if so, search siblings of parent instead
-    }
+// HAMMER TIME!!!
 
-    nextdiv = container.nextAll('.next-item-right, :has(.next-item-right)').first();
-    
-    // no next .container found, go back to first container
-    if (nextdiv.length==0) {
-      nextdiv = $(document).find('.next-item-right:first');
-    }
-    
-    $('html, body').animate({scrollLeft:nextdiv.offset().left},600);
-    return false;
+var mc_h1 = new Hammer($('#home-1')[0]);
+mc_h1.on("panleft", function(ev) {
+  horizontalSwiper().call($('#h1_horiz'),ev);
 });
-
-
+var mc_news = new Hammer($('#news')[0]);
+mc_news.on("panleft", function(ev) {
+  horizontalSwiper().call($('#news_horiz'),ev);
+});
 
 /*TOGGLE MOBILE MENU*/
-    
 $("#menu-button").click(function() {
     $("#menu").toggleClass('open');
 });

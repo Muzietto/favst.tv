@@ -19,23 +19,17 @@
     <title></title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="apple-touch-icon" href="http://wild-beasts.co.uk/wp-content/themes/wild-beasts/library/images/apple-icon-touch.png">
     <link rel="icon" href="http://wild-beasts.co.uk/wp-content/themes/wild-beasts/favicon.png">
 
-<!--
-    <link rel='stylesheet' id='bones-stylesheet-css' href='http://wild-beasts.co.uk/wp-content/themes/wild-beasts/library/css/style.css' type='text/css' media='all' />
--->
     <link rel='stylesheet' id='bones-stylesheet-css' href='style.css' type='text/css' media='all' />
-
-    <!--[if lt IE 9]>
-    <link rel='stylesheet' id='bones-ie-only-css' href='http://wild-beasts.co.uk/wp-content/themes/wild-beasts/library/css/ie.css' type='text/css' media='all' />
-    <![endif]-->
     
-    <script type='text/javascript' src='http://wild-beasts.co.uk/wp-content/themes/wild-beasts/library/js/libs/modernizr.custom.min.js'></script>
-    <script type='text/javascript' src='http://wild-beasts.co.uk/wp-includes/js/jquery/jquery.js'></script>
-    <script type='text/javascript' src='http://wild-beasts.co.uk/wp-includes/js/jquery/jquery-migrate.min.js'></script>
-    <script type="text/javascript" src="http://wild-beasts.co.uk/wp-content/themes/wild-beasts/library/js/jquery.js"></script>
+    <script type='text/javascript' src='modernizr.custom.min.js'></script>
+    <script type='text/javascript' src='jquery.js'></script>
+    <script type='text/javascript' src='themes/jquery.js'></script>
+    <script type='text/javascript' src='jquery-migrate.min.js'></script>
+    <script type='text/javascript' src="hammer.js"></script>
   </head>
 
   <body class="home blog">
@@ -58,7 +52,7 @@
       <section id="home-1" class="cf landing-page page next-item">
         <div id="landing-container" class="clearfix" style="background-image:url('img/image-only1-favst.jpg')">
           <div id="landing" style="background-image:url('type-only-2-favst-tv.png')" class="cf">
-          <div class="next-right right-arrow" style="float:right;">
+          <div id="h1_horiz" class="next-right right-arrowxxx" style="float:right;">swipe left
           </div>
           </div>
         </div>
@@ -76,7 +70,7 @@
 
       <section id="home-2" class="cf page next-item">
         <div class="image-column cf">
-          <img src="wb_soft-favst.jpg" style="width:80%"/>
+          <img src="wb_soft-favst.jpg" style="width:50%"/>
         </div>
 
         <div class="text-column cf">
@@ -151,11 +145,13 @@
               </a>
             </li>
           </ul>
-          <footer class="page-footer">
+          <footer class="page-footer clearfix">
             <a href="http://wild-beasts.co.uk/news-archive"class="archive-link">
               <span class="archive-link-img"></span>
               <span class="archive-link-text">View Archive</span>
             </a>
+            <div id="news_horiz" class="next-right right-arrowxxx" style="float:right;">swipe left
+            </div>
           </footer>
         </section>
       <!--end news list-->
@@ -186,6 +182,8 @@
               <span class="archive-link-img"></span>
               <span class="archive-link-text">Past Shows</span>
             </a>
+            <div class="next-right right-arrowxxx" style="float:right;">swipe left
+            </div>
           </footer>
         </section>
 
@@ -220,22 +218,6 @@
               <a class ="more-info" href="http://wild-beasts.co.uk/discography/present-tense-2-disc-special-edition/">info</a>
             </li>
 
-            <li class="cf">
-              <a href="http://wild-beasts.co.uk/discography/present-tense/">
-                <img width="90" height="90" src="http://wild-beasts.co.uk/wp-content/uploads/2014/02/Present-Tense-90x90.jpg" class="artwork wp-post-image" alt="Present-Tense" />
-                <div class="disc-details">
-                  <span class="name">Present Tense</span>
-                  <span class="label">Domino Records ltd.</span>
-                  <span class="release-date">24.02.2014</span>
-                </div>
-              </a>
-
-              <a class="disco-buy" href="http://www.dominorecordco.com/uk/albums/18-12-13/present-tense/#mediaheader" target="_blank">Buy</a>
-              <a class="listen" href="https://play.spotify.com/album/6paRAqzaI1O3rozRiVmyhS" target="_blank" >Listen</a>
-              <a class ="more-info" href="http://wild-beasts.co.uk/discography/present-tense/">info</a>
-            </li>
-          </ul>
-
           <h3>EPs</h3>
           <ul>
             <!-- the loop -->
@@ -254,6 +236,10 @@
               <a class ="more-info" href="http://wild-beasts.co.uk/discography/reach-a-bit-further/">info</a>
             </li>
           </ul>
+          <footer class="page-footer">
+            <div class="next-right right-arrowxxx" style="float:right;">swipe left
+            </div>
+          </footer>
         </section>
         <!--end discography list-->
 
@@ -292,6 +278,10 @@
               </a>
             </li>
           </ul>
+          <footer class="page-footer">
+            <div class="next-right right-arrowxxx" style="float:right;">swipe left
+            </div>
+          </footer>
         </section>
 
         <div id="video-split-1" class="page">

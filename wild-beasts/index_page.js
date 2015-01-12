@@ -5,6 +5,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }	
 else {
 
+/*
 $(window).scroll( function(){
 
     // The .offset() method allows us to retrieve the current position of an element relative to the document
@@ -58,6 +59,8 @@ $(window).scroll( function(){
 	    }, 800);
     }
 });
+
+*/
 }
 
 
