@@ -26,14 +26,24 @@ body{font-family:'walsheim',sans-serif;letter-spacing:.2em;background:#A4A3A4}
 	text-transform:capitalize;
 }
 
+h1 {
+  margin: none !important;
+}
+
 /*links*/
-a{color:#fff;text-decoration:none;display:inline;}
-a:hover{color:yellow;cursor:pointer;}
-a.selected{color:yellow;}
+a {
+  color:#fff;text-decoration:none;display:inline;
+}
+a:hover {
+  color:yellow;cursor:pointer;
+}
+a.selected {
+  color:yellow;
+}
 
 .small{
 	font-size:..5em;
-	}
+}
 
 /******************************************************************
 GENERAL
@@ -72,14 +82,17 @@ RESPONSIVE LAYOUT SHIZENS
 
 .no-touch .column {
  	width:10%;
+  /*border: 2px solid yellow;*/
 }
 
 .no-touch .row {
- 	height:100%;
+  /*border: 2px solid green;*/
 }
 
 .no-touch .split-vertical {
  	width:10%;
+  display: inline;
+  float: left;
   background-size: 100% 100%;
 }
 
@@ -103,8 +116,7 @@ PAGES & COLUMNS
 ******************************************************************/
 
 .column{
-	min-height:100%;
-	display:block-inline;
+	display:inline-block;
 	float:left;
 }
 
@@ -112,19 +124,7 @@ PAGES & COLUMNS
 .no-touch .split-vertical{display:block;}
 
 .page{
-	padding:90px 15px 60px; 
-	width:100%;
- 	overflow:auto;
-	display:block; 
-	position:relative;
-	float:left;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size:100% 100%; 
-	background-repeat:no-repeat;
-	background-position:center center;
- 	}
+}
 
 
 
@@ -164,6 +164,9 @@ COLOUR GRID AND DIVIDER BACKGROUNDS
 }
 .bkg_blue_turquoise  {
   background:url('img/backgrounds/blue_turquoise.png');
+}
+.bkg_turquoise_blue  {
+  background:url('img/backgrounds/turquoise_blue.png');
 }
 
 /******************************************************************
