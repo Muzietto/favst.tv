@@ -93,20 +93,20 @@ RESPONSIVE LAYOUT SHIZENS
 ******************************************************************/
 
 /*horizontal layout styles for non-mobile devices*/
-.no-touch body{
+body{
 	width:1000%;
 }
 
-.no-touch .column {
+.column {
  	width:10%;
-  /*border: 2px solid yellow;*/
+  border: 2px solid yellow;
 }
 
-.no-touch .row {
-  /*border: 2px solid green;*/
+.row {
+  border: 2px solid green;
 }
 
-.no-touch .split-vertical {
+body .split-vertical {
  	width:10%;
   display: inline;
   float: left;
@@ -119,13 +119,9 @@ RESPONSIVE LAYOUT SHIZENS
 }
 
 /*vertical layout for mobile devices*/
-body{
-	width:100%;
-}
 
-.split-vertical{
-	width:100%;
-}
+
+
 
 
 /******************************************************************
@@ -135,14 +131,6 @@ PAGES & COLUMNS
 .column{
 	display:inline-block;
 	float:left;
-}
-
-.split-vertical {
-  /*display:none;*/
-}
-
-.no-touch .split-vertical {
-  display:block;
 }
 
 .page{

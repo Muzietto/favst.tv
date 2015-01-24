@@ -20,6 +20,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }	
 else {
   $(document).ready(function(){
+    
     $('.column').css({'min-height':(($(document).height()))+'px'});
   });
 }
