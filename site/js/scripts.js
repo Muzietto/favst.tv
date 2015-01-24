@@ -1,7 +1,10 @@
 
 /* add window height as min-height to all pages and splitters*/
 var resizzer = function(){
-  var windowHeight = $(window).height();
+  
+  var multiplier = (Modernizr.touch ? 0.91 : 1)
+  
+  var windowHeight = Math.floor($(window).height() * multiplier);
   var splitHeight = Math.floor(windowHeight/5);
 
   $('.row').css({'min-height' : windowHeight + 'px'});
@@ -22,6 +25,8 @@ else {
   $(document).ready(function(){
     
     $('.column').css({'min-height':(($(document).height()))+'px'});
+    
+    
   });
 }
 

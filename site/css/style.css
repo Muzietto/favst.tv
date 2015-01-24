@@ -135,7 +135,7 @@ a.scroll-up, a.scroll-down {
   margin: 0 auto;
   width: 250px;
   text-align: center;
-  font-size: 4em;
+  font-size: 3em;
   font-weight: bold;
   display: none;
 }
@@ -145,7 +145,7 @@ a.scroll-down {
 }
 
 a.scroll-down {
-  width: 400px;
+  width: 260px;
 }
 
 /******************************************************************
@@ -217,6 +217,13 @@ COLOUR GRID AND DIVIDER BACKGROUNDS
 	
 ******************************************************************/	
 @media screen and (min-width: 600px) {
+a.scroll-up, a.scroll-down {
+  font-size: 4em;
+}
+a.scroll-down {
+  width: 400px;
+}
+
 }/*****end tablet mobile styles******/
 
 /*****************************************************************
