@@ -49,7 +49,7 @@ var swiper = function(direction, scrollTarget, backwards) {
       }
 
 
-      alert(nextdiv.attr('id'));
+      //alert(nextdiv.attr('id'));
       var scrollObject = {};
 
       try {

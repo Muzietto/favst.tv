@@ -113,16 +113,10 @@ body .split-vertical {
   background-size: 100% 100%;
 }
 
-.no-touch .split-horizontal {
+body .split-horizontal {
  	height:10%;
   background-size: 100% 100%;
 }
-
-/*vertical layout for mobile devices*/
-
-
-
-
 
 /******************************************************************
 PAGES & COLUMNS
@@ -154,6 +148,29 @@ a.scroll-down {
   width: 400px;
 }
 
+/******************************************************************
+PAGE ELEMENTS
+******************************************************************/
+
+  a.scroll-up, a.scroll-down {
+    display: block;
+  }
+
+  a.scroll-up {
+    color: #fffd80;
+  }
+  a.scroll-up:hover {
+    color: #ffe800;
+  }
+
+  a.scroll-down {
+    color: #3e94d1;
+  }
+  a.scroll-down:hover {
+    color: blue;
+  }
+
+  
 /******************************************************************
 COLOUR GRID AND DIVIDER BACKGROUNDS
 ******************************************************************/
@@ -200,24 +217,6 @@ COLOUR GRID AND DIVIDER BACKGROUNDS
 	
 ******************************************************************/	
 @media screen and (min-width: 600px) {
-
-  a.scroll-up, a.scroll-down {
-    display: block;
-  }
-
-  a.scroll-up {
-    color: #fffd80;
-  }
-  a.scroll-up:hover {
-    color: #ffe800;
-  }
-
-  a.scroll-down {
-    color: #3e94d1;
-  }
-  a.scroll-down:hover {
-    color: blue;
-  }
 }/*****end tablet mobile styles******/
 
 /*****************************************************************
