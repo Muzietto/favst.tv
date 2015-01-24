@@ -26,26 +26,29 @@ else {
 
 // swiping function
 var swiper = function(direction, scrollTarget, backwards) {
+  var extremity = (backwards ? 'last' : 'first');
   var allSelectorString = '.next-item-' + direction + ', :has(.next-item-' + direction + ')';
-  var singleSelectorString = '.next-item-' + direction + ':first';
+  var tildedSelectorString = '~.next-item-' + direction + ', ~:has(.next-item-' + direction + ')';
+  var singleSelectorString = '.next-item-' + direction + ':' + extremity;
   return function(e) {
-      var $this = $(this);
-      container = $this.parent();
+      var container = $(this);
 
       // am I the last .next-item in my group?
-      while (document != container[0] && container.find(allSelectorString).length === 0) {
+      while (document != container[0] && container.find(tildedSelectorString).length === 0) {
           container = container.parent(); // if so, search siblings of parent instead
       }
 
       var methodName = !backwards ? 'nextAll' : 'prevAll';
       // previous/following siblings of $(this)
-      nextdiv = $this[methodName](allSelectorString).first();
+      nextdiv = container[methodName](allSelectorString)[extremity]();
       
-      // no next .container found, go back to first container
+      // no next .container found, go back to first/last container
       if (nextdiv.length === 0) {
         nextdiv = $(document).find(singleSelectorString);
       }
 
+
+      alert(nextdiv.attr('id'));
       var scrollObject = {};
 
       try {
@@ -66,14 +69,25 @@ var horizontalSwiper = function(backwards) {
   return swiper('right','scrollLeft',backwards);
 }
 
-// HAMMER TIME!!!
-$('.next-item-right').hammer().bind('panleft', horizontalSwiper());
-$('.next-item-right').hammer().bind('panright', horizontalSwiper(true));
+$('.next-item-bottom')
+  .prepend($('<div/>', {class:'absolute w100pc'})
+    .append($('<a/>', {class:'scroll-up', text:'go UP'}))
+  );
+$('.next-item-bottom')
+  .append($('<div/>', {class:'absolute bottom w100pc'})
+    .append($('<a/>', {class:'scroll-down', text:'go DOWN'}))
+  );
 
-$('.next-item-bottom').hammer().bind('tap', verticalSwiper());
-$('.next-item-bottom').hammer().bind('press', verticalSwiper(true));
+$(document).ready(function() {
+  
+  $('.scroll-down').on('click', verticalSwiper());
+  $('.scroll-up').on('click', verticalSwiper(true));
 
-
+  // HAMMER TIME!!!
+  $('.next-item-right').hammer().bind('swipeleft', horizontalSwiper());
+  $('.next-item-right').hammer().bind('swiperight', horizontalSwiper(true));
+  
+});
 
 
 

@@ -11,11 +11,16 @@ TYPOGRAPHY
   src: url("webfonts/gt-walsheim-medium-web.eot");
   src: url("webfonts/gt-walsheim-medium-web.eot?#iefix") format("embedded-opentype"), url("webfonts/gt-walsheim-medium-web.woff") format("woff"), url("webfonts/gt-walsheim-medium-web.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal;
+}
 
-body{font-family:'walsheim',sans-serif;letter-spacing:.2em;background:#A4A3A4}
+body{
+  font-family:'walsheim',sans-serif;
+  letter-spacing:.2em;
+  background:#A4A3A4
+}
 
- h3{
+h3{
 	font-size:1em;
 	color:white;
 	width:100%;
@@ -51,26 +56,38 @@ GENERAL
 
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
- }
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 
 /*clearfix*/
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+.clearfix:before, .clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
-.cf:after {
-    clear: both;
+.clearfix:after {
+  clear: both;
 }
 
 /* For IE 6/7 only Include this rule to trigger hasLayout and contain floats.*/
-.cf {
-    *zoom: 1;
+.clearfix {
+  *zoom: 1;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.w100pc {
+  width: 100%;
+}
+
+.bottom {
+  bottom: 0px;
+}
 /******************************************************************
 RESPONSIVE LAYOUT SHIZENS
 ******************************************************************/
@@ -103,11 +120,11 @@ RESPONSIVE LAYOUT SHIZENS
 
 /*vertical layout for mobile devices*/
 body{
-//	width:100%;
+	width:100%;
 }
 
- .split-vertical{
-//	width:100%;
+.split-vertical{
+	width:100%;
 }
 
 
@@ -120,14 +137,34 @@ PAGES & COLUMNS
 	float:left;
 }
 
-.split-vertical{display:none;}
-.no-touch .split-vertical{display:block;}
-
-.page{
+.split-vertical {
+  /*display:none;*/
 }
 
+.no-touch .split-vertical {
+  display:block;
+}
 
+.page{
+  position:relative;
+}
 
+a.scroll-up, a.scroll-down {
+  margin: 0 auto;
+  width: 250px;
+  text-align: center;
+  font-size: 4em;
+  font-weight: bold;
+  display: none;
+}
+
+a.scroll-down {
+  width: 250px;
+}
+
+a.scroll-down {
+  width: 400px;
+}
 
 /******************************************************************
 COLOUR GRID AND DIVIDER BACKGROUNDS
@@ -176,6 +213,23 @@ COLOUR GRID AND DIVIDER BACKGROUNDS
 ******************************************************************/	
 @media screen and (min-width: 600px) {
 
+  a.scroll-up, a.scroll-down {
+    display: block;
+  }
+
+  a.scroll-up {
+    color: #fffd80;
+  }
+  a.scroll-up:hover {
+    color: #ffe800;
+  }
+
+  a.scroll-down {
+    color: #3e94d1;
+  }
+  a.scroll-down:hover {
+    color: blue;
+  }
 }/*****end tablet mobile styles******/
 
 /*****************************************************************
