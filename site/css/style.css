@@ -219,8 +219,14 @@ COLOUR GRID AND DIVIDER BACKGROUNDS
 .bkg_destaat_interreel {
   background:url('img/backgrounds/destaat_interreel.png');
 }
+.bkg_interreel_kamer {
+  background:url('img/backgrounds/interreel_kamer.png');
+}
+.bkg_destaat_pink {
+  background:url('img/backgrounds/destaat_pink.png');
+}
 .bkg_kamer {
-  background:url('img/backgrounds/kamer.jpg');
+  background:url('img/backgrounds/bkg-kamer.jpg');
 }
 
 /******************************************************************
