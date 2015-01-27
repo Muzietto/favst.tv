@@ -210,6 +210,18 @@ COLOUR GRID AND DIVIDER BACKGROUNDS
 .bkg_turquoise_blue  {
   background:url('img/backgrounds/turquoise_blue.png');
 }
+.bkg_destaat {
+  background:url('img/backgrounds/destaat.png');
+}
+.bkg_interreel {
+  background-color: #ffffff;
+}
+.bkg_destaat_interreel {
+  background:url('img/backgrounds/destaat_interreel.png');
+}
+.bkg_kamer {
+  background:url('img/backgrounds/kamer.jpg');
+}
 
 /******************************************************************
 	
