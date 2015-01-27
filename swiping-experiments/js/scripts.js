@@ -12,22 +12,12 @@ var resizzer = function(){
   $('.split-horizontal').css({'min-height' : splitHeight + 'px' });
 };
 
-$(document).ready(function(){
-  $(window).resize(resizzer);
-  resizzer();
-});
 
-/* add document height as min-height to all columns*/
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  /* find out */
-}	
-else {
-  $(document).ready(function(){
-    
-    $('.column').css({'min-height':(($(document).height()))+'px'});
-    
-    
-  });
+var horizontalScroller = function(backwards) {
+  return findTargetDiv('next-item-right', backwards);  
+}
+var verticalScroller = function(backwards) {
+  return findTargetDiv('next-item-bottom', backwards);  
 }
 
 var findTargetDiv = function(cssClass, backwards) {
@@ -54,17 +44,37 @@ var findTargetDiv = function(cssClass, backwards) {
   }
 }
 
-var horizontalScroller = function(backwards) {
-  return findTargetDiv('next-item-right', backwards);  
-}
-var verticalScroller = function(backwards) {
-  return findTargetDiv('next-item-bottom', backwards);  
+$(document).ready(function(){
+  $(window).resize(resizzer);
+  resizzer();
+});
+
+/* add document height as min-height to all columns*/
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  /* find out */
+}	
+else {
+  $(document).ready(function(){
+    
+    $('.column').css({'min-height':(($(document).height()))+'px'});
+    
+    
+  });
 }
 
 $('.next-item-bottom')
-  .prepend($('<div/>', {class:'absolute w100pc'})
+  .prepend($('<div"/>', {class:'absolute w100pc'})
     .append($('<a/>', {class:'scroll-up', text:'go UP'}))
   );
+  /*
+$('.next-item-bottom')
+  .append($('<div/>', {class:'absolute left w12pc'})
+    .append($('<a/>', {class:'scroll-left', text:'go LEFT'}))
+  );
+$('.next-item-bottom')
+  .append($('<div/>', {class:'absolute right w12pc'})
+    .append($('<a/>', {class:'scroll-right', text:'go RIGHT'}))
+  );*/
 $('.next-item-bottom')
   .append($('<div/>', {class:'absolute bottom w100pc'})
     .append($('<a/>', {class:'scroll-down', text:'go DOWN'}))
@@ -75,11 +85,10 @@ $(document).ready(function() {
   $('.scroll-down').click(verticalScroller()); //findNextVerticalContainer)
   $('.scroll-up').click(verticalScroller(true)); //findPreviousVerticalContainer)
 
-  // HAMMER TIME!!!
   $('.next-item-right').hammer().bind('swipeleft', horizontalScroller()); //findNextHorizontalContainer)
   $('.next-item-right').hammer().bind('swiperight', horizontalScroller(true)); //findPreviousHorizontalContainer)
   
-});
+  });
 
 
 
