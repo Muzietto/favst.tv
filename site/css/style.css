@@ -61,7 +61,6 @@ GENERAL
   box-sizing: border-box;
 }
 
-
 /*clearfix*/
 .clearfix:before, .clearfix:after {
   content: " "; /* 1 */
@@ -77,17 +76,18 @@ GENERAL
   *zoom: 1;
 }
 
-.absolute {
-  position: absolute;
-}
+.absolute { position: absolute; }
 
-.w100pc {
-  width: 100%;
-}
+.w100pc { width: 100%; }
 
-.bottom {
-  bottom: 0px;
-}
+.bottom { bottom: 0px; }
+
+.relative { position: relative; }
+
+.left { float: left; }
+
+.right { float: right; }
+
 /******************************************************************
 RESPONSIVE LAYOUT SHIZENS
 ******************************************************************/
@@ -152,28 +152,63 @@ a.scroll-down {
 PAGE ELEMENTS
 ******************************************************************/
 
-  a.scroll-up, a.scroll-down {
-    display: block;
-  }
+span.page_size { margin-right: 10px; }
 
-  a.scroll-up {
-    color: #fffd80;
-  }
-  a.scroll-up:hover {
-    color: #ffe800;
-  }
+a.scroll-up, a.scroll-down {
+  display: block;
+}
 
-  a.scroll-down {
-    color: #3e94d1;
-  }
-  a.scroll-down:hover {
-    color: blue;
-  }
+a.scroll-up {
+  color: #fffd80;
+}
+a.scroll-up:hover {
+  color: #ffe800;
+}
 
+a.scroll-down {
+  color: #3e94d1;
+}
+a.scroll-down:hover {
+  color: blue;
+}
+
+.fascione {
+  position: relative;
+  width:100%;
+}
+
+.vert_cent {
+  margin-top: 10%;
+}
+
+.youtube_container {
+  margin-left: 7%;
+  margin-top: 50px;
+}
+
+.youtube-player {
+  width: 320px;
+  height: 192px;
+}
+
+article.presentation {
+  width: 95%;
+  margin-left: 5%;
+}
+
+article p {
+  font-size: 1em;
+}
+
+article h1 {
+  font-size: 2em;
+}
   
 /******************************************************************
 COLOUR GRID AND DIVIDER BACKGROUNDS
 ******************************************************************/
+.azur { color: #3e94d1; }
+
 .bkg_turquoise  {
   background:url('img/backgrounds/turquoise.png');
 }
@@ -235,12 +270,31 @@ COLOUR GRID AND DIVIDER BACKGROUNDS
 	
 ******************************************************************/	
 @media screen and (min-width: 600px) {
-a.scroll-up, a.scroll-down {
-  font-size: 4em;
-}
-a.scroll-down {
-  width: 400px;
-}
+
+  .youtube-player {
+    width: 640px;
+    height: 385px;
+  }
+  
+  article.presentation {
+    width: 35%;
+    margin-left: 5%;
+  }
+  
+  article p {
+    font-size: 1.8em;
+  }
+  
+  article h1 {
+    font-size: 2.6em;
+  }
+
+  a.scroll-up, a.scroll-down {
+    font-size: 4em;
+  }
+  a.scroll-down {
+    width: 400px;
+  }
 
 }/*****end tablet mobile styles******/
 
@@ -261,17 +315,20 @@ LARGE SCREEN TYPE SIZES
 ******************************************************************/
 @media screen and (min-width: 1000px) {
 
-body{font-size:16px;}
-}
+  body{font-size:16px;}
+  }
+
 /* END DESKTOP 1000px */	
 
 
 @media screen and (min-width: 1300px) {
-body{font-size:18px;}
-}
+  body{font-size:18px;}
+  }
+
 /* END DESKTOP 1300px */
 
 @media screen and (min-width: 1600px) {
-body{font-size:20px;}
-}
+  body{font-size:20px;}
+  }
+
 /* END DESKTOP 1300px */

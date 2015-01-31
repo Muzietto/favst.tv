@@ -1,15 +1,46 @@
 
+var cssToInteger = function(pxString) {
+  var result = null;
+  try {
+    result = parseInt(pxString.substring(0,pxString.length-2));    
+  } catch (err) {}
+  return result;
+}
+
 /* add window height as min-height to all pages and splitters*/
 var resizzer = function(){
   
   var multiplier = (Modernizr.touch ? 0.91 : 1)
   
   var windowHeight = Math.floor($(window).height() * multiplier);
-  var splitHeight = Math.floor(windowHeight/5);
+  var windowWidth = window.innerWidth;
+  var splitMinHeight = Math.floor(windowHeight/5);
+  
+  var splitHeight = cssToInteger($('.split-horizontal').css('height'));
+  var splitWidth = cssToInteger($('.split-vertical').css('width'));
 
   $('.row').css({'min-height' : windowHeight + 'px'});
   $('.split-vertical').css({'min-height' : windowHeight + 'px' });
-  $('.split-horizontal').css({'min-height' : splitHeight + 'px' });
+  $('.split-horizontal').css({'min-height' : splitMinHeight + 'px' });
+  
+  $('.page').each(function() {
+    var $this = $(this);
+    // page id e.g. 'section_2-1'
+    var colRow = $this.attr('id').split('_')[1].split('-'); // [col,row]
+    var colIndex = parseInt(colRow[0]);
+    var rowIndex = parseInt(colRow[1]);
+
+    var offsetLeft = (colIndex - 1) * windowWidth + ((colIndex > 1) ? (colIndex - 2) * splitWidth : 0);
+    var offsetTop = (rowIndex - 1) * windowHeight + ((rowIndex > 1) ? (rowIndex - 2) * splitHeight : 0);
+    $this.offset({'top':offsetLeft,'left':offsetTop});
+    
+    var offset = $this.offset();
+    
+    var spanContent = windowWidth+'*'+windowHeight;
+    spanContent += ' {top:'+ Math.floor(offset.top * 100) / 100 + ',left:'+Math.floor(offset.left * 100) / 100+'}';
+    
+    $('.page_size',$this).text(spanContent);
+  });
 };
 
 $(document).ready(function(){
