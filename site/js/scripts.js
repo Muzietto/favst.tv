@@ -1,3 +1,5 @@
+// navigation state
+var $currentPage = $('#section_1-1');
 
 var cssToInteger = function(pxString) {
   var result = null;
@@ -8,8 +10,7 @@ var cssToInteger = function(pxString) {
 }
 
 /* add window height as min-height to all pages and splitters*/
-var resizzer = function(){
-  
+var resizzer = function(e){
   var multiplier = (Modernizr.touch ? 0.91 : 1)
   
   var windowHeight = Math.floor($(window).height() * multiplier);
@@ -19,7 +20,8 @@ var resizzer = function(){
   $('.row').css({'min-height' : windowHeight + 'px'});
   $('.split-vertical').css({'min-height' : windowHeight + 'px' });
   $('.split-horizontal').css({'min-height' : splitMinHeight + 'px' });
-  
+
+  // temporary display - TODO: remove when site is ready
   $('.page').each(function() {
     var $this = $(this);
     var offset = $this.offset();
@@ -29,6 +31,21 @@ var resizzer = function(){
     
     $('.page_size',$this).text(spanContent);
   });
+  return false;
+};
+
+// http://stackoverflow.com/questions/5489946/jquery-how-to-wait-for-the-end-of-resize-event-and-only-then-perform-an-ac/5490021#5490021
+var resizing;
+function resizedw(){
+  var offset = $currentPage.offset();
+  window.scrollTo(offset.left,offset.top);
+  return false;
+}
+window.onresize = function() {
+    clearTimeout(resizing);
+    resizing = setTimeout(function() {
+        resizedw();
+    }, 100);
 };
 
 $(document).ready(function(){
@@ -42,10 +59,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }	
 else {
   $(document).ready(function(){
-    
     $('.column').css({'min-height':(($(document).height()))+'px'});
-    
-    
   });
 }
 
@@ -61,7 +75,9 @@ var findTargetDiv = function(cssClass, backwards) {
       timeLapse = 150;
       $nextContainer = $container.parent().find('.'+cssClass+firstOrLast);
     }
-    //alert($nextContainer.attr('id'));
+    
+    // set navigation state
+    $currentPage = $nextContainer;
     
     var scrollObject = { 
         scrollTop: $nextContainer.offset().top, 

@@ -99,11 +99,11 @@ body{
 
 .column {
  	width:10%;
-  border: 2px solid yellow;
+  /*border: 2px solid yellow;*/
 }
 
 .row {
-  border: 2px solid green;
+  /*border: 2px solid green;*/
 }
 
 body .split-vertical {
