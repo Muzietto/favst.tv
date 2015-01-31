@@ -41,11 +41,10 @@ function resizedw(){
   window.scrollTo(offset.left,offset.top);
   return false;
 }
+
 window.onresize = function() {
     clearTimeout(resizing);
-    resizing = setTimeout(function() {
-        resizedw();
-    }, 100);
+    resizing = setTimeout(resizedw, 100);
 };
 
 $(document).ready(function(){
@@ -75,7 +74,7 @@ var findTargetDiv = function(cssClass, backwards) {
       timeLapse = 150;
       $nextContainer = $container.parent().find('.'+cssClass+firstOrLast);
     }
-    
+
     // set navigation state
     $currentPage = $nextContainer;
     
@@ -96,6 +95,7 @@ var verticalScroller = function(backwards) {
   return findTargetDiv('next-item-bottom', backwards);  
 }
 
+// click handler for .page
 var pageScroller = function(e) {
   var offset = $(this).offset();
   window.scrollTo(offset.left,offset.top);
@@ -120,7 +120,10 @@ $(document).ready(function() {
   $('.next-item-right').hammer().bind('swipeleft', horizontalScroller()); //findNextHorizontalContainer)
   $('.next-item-right').hammer().bind('swiperight', horizontalScroller(true)); //findPreviousHorizontalContainer)
   
-  $('.page').click(pageScroller);
+  $(document).on("scrollstop",function(e){
+    alert('top:'+$(window).scrollTop()+';left:'+$(window).scrollLeft())
+    
+  });
 });
 
 
