@@ -15,9 +15,6 @@ var resizzer = function(){
   var windowHeight = Math.floor($(window).height() * multiplier);
   var windowWidth = window.innerWidth;
   var splitMinHeight = Math.floor(windowHeight/5);
-  
-  var splitHeight = cssToInteger($('.split-horizontal').css('height'));
-  var splitWidth = cssToInteger($('.split-vertical').css('width'));
 
   $('.row').css({'min-height' : windowHeight + 'px'});
   $('.split-vertical').css({'min-height' : windowHeight + 'px' });
@@ -25,17 +22,8 @@ var resizzer = function(){
   
   $('.page').each(function() {
     var $this = $(this);
-    // page id e.g. 'section_2-1'
-    var colRow = $this.attr('id').split('_')[1].split('-'); // [col,row]
-    var colIndex = parseInt(colRow[0]);
-    var rowIndex = parseInt(colRow[1]);
-
-    var offsetLeft = (colIndex - 1) * windowWidth + ((colIndex > 1) ? (colIndex - 2) * splitWidth : 0);
-    var offsetTop = (rowIndex - 1) * windowHeight + ((rowIndex > 1) ? (rowIndex - 2) * splitHeight : 0);
-    $this.offset({'top':offsetLeft,'left':offsetTop});
-    
     var offset = $this.offset();
-    
+
     var spanContent = windowWidth+'*'+windowHeight;
     spanContent += ' {top:'+ Math.floor(offset.top * 100) / 100 + ',left:'+Math.floor(offset.left * 100) / 100+'}';
     
@@ -92,6 +80,12 @@ var verticalScroller = function(backwards) {
   return findTargetDiv('next-item-bottom', backwards);  
 }
 
+var pageScroller = function(e) {
+  var offset = $(this).offset();
+  window.scrollTo(offset.left,offset.top);
+  return false;
+}
+
 $('.next-item-bottom')
   .prepend($('<div/>', {class:'absolute w100pc'})
     .append($('<a/>', {class:'scroll-up', text:'go UP'}))
@@ -110,6 +104,7 @@ $(document).ready(function() {
   $('.next-item-right').hammer().bind('swipeleft', horizontalScroller()); //findNextHorizontalContainer)
   $('.next-item-right').hammer().bind('swiperight', horizontalScroller(true)); //findPreviousHorizontalContainer)
   
+  $('.page').click(pageScroller);
 });
 
 
