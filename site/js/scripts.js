@@ -96,7 +96,7 @@ var verticalScroller = function(backwards) {
 }
 
 // click handler for .page
-var pageScroller = function(e) {
+var pageScroller = function() {
   var offset = $(this).offset();
   window.scrollTo(offset.left,offset.top);
   return false;
@@ -121,8 +121,24 @@ $(document).ready(function() {
   $('.next-item-right').hammer().bind('swiperight', horizontalScroller(true)); //findPreviousHorizontalContainer)
   
   $(document).on("scrollstop",function(e){
-    alert('top:'+$(window).scrollTop()+';left:'+$(window).scrollLeft())
-    
+    //alert('top:'+$(window).scrollTop()+';left:'+$(window).scrollLeft())
+    var viewportPosition = { top: $(window).scrollTop(), left: $(window).scrollLeft() };
+    var $closestPage = null;
+    var shortestDistance = Number.MAX_VALUE;
+    $('.page').each(function(){
+      var $this = $(this);
+      var thisDistance = distance($this.offset());
+      if (thisDistance < shortestDistance) {
+        $closestPage = $this;
+        shortestDistance = thisDistance;
+      }
+      function distance(curOffset) {
+        return Math.sqrt(Math.pow(viewportPosition.top - curOffset.top,2) + Math.pow(viewportPosition.left - curOffset.left,2));
+      }
+    });
+    // set the global
+    $currentPage = $closestPage;
+    pageScroller.call($closestPage); // H2 scroll slowly?
   });
 });
 
