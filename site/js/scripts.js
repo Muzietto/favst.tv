@@ -138,7 +138,7 @@ $(document).ready(function() {
     });
     // set the global
     $currentPage = $closestPage;
-    pageScroller.call($closestPage); // H2 scroll slowly?
+    pageScroller.call($closestPage);
   });
 });
 
