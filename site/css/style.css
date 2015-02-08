@@ -89,10 +89,9 @@ GENERAL
 .right { float: right; }
 
 /******************************************************************
-RESPONSIVE LAYOUT SHIZENS
+GLOBAL GRID LAYOUT 
 ******************************************************************/
 
-/*horizontal layout styles for non-mobile devices*/
 body{
 	width:1000%;
 }
@@ -182,16 +181,19 @@ a.scroll-down:hover {
 }
 
 .youtube_container {
-  margin-left: 7%;
-  margin-top: 50px;
+  position: relative;
+  border: 1px solid red;
+  width: 100%; /* smaller screen */
 }
 
+/*
 .youtube-player {
   width: 320px;
   height: 192px;
 }
-
+*/
 article.presentation {
+  border: 1px solid blue;
   width: 95%;
   margin-left: 5%;
 }
@@ -203,7 +205,106 @@ article p {
 article h1 {
   font-size: 2em;
 }
+
+/* http://stackoverflow.com/questions/7737557/how-can-i-make-the-youtube-player-scale-to-the-width-of-the-page-but-also-keep-t/17465040#17465040 */
+.auto-resizable-iframe {
+  max-width: 520px; /* TODO try up to 640px */
+  margin: 0px auto;
+}
+
+.auto-resizable-iframe > div {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0px;
+}
+
+.auto-resizable-iframe iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+/******************************************************************
+	
+	BOTH DESKTOPS AND TABLETS USE THESE...
+	
+******************************************************************/	
+@media screen and (min-width: 600px) {
+
+  .youtube_container {
+    width: 52%;
+    margin-left: 7%;
+    margin-top: 50px;
+  }
+/*
+  .youtube-player {
+    width: 640px;
+    height: 385px;
+  }
+*/  
+  article.presentation {
+    width: 35%;
+    margin-left: 5%;
+  }
   
+  article p {
+    font-size: 1.8em;
+  }
+  
+  article h1 {
+    font-size: 2.6em;
+  }
+
+  a.scroll-up, a.scroll-down {
+    font-size: 4em;
+  }
+  a.scroll-down {
+    width: 400px;
+  }
+
+}/*****end tablet mobile styles******/
+
+/*****************************************************************
+******************************************************************
+******************************************************************
+DESKTOP
+******************************************************************
+******************************************************************
+*****************************************************************/
+@media screen and (min-width: 800px) {
+
+}
+/* END DESKTOP 800px */	
+
+/******************************************************************
+LARGE SCREEN TYPE SIZES
+******************************************************************/
+@media screen and (min-width: 1000px) {
+
+  body{font-size:16px;}
+  }
+
+/* END DESKTOP 1000px */	
+
+
+@media screen and (min-width: 1300px) {
+  body{font-size:18px;}
+  }
+
+  .auto-resizable-iframe {
+    max-width: 850px;
+  }
+
+/* END DESKTOP 1300px */
+
+@media screen and (min-width: 1600px) {
+  body{font-size:20px;}
+  }
+
+/* END DESKTOP 1300px */
+
 /******************************************************************
 COLOR GRID AND DIVIDER BACKGROUNDS
 ******************************************************************/
@@ -263,72 +364,3 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 .bkg_kamer {
   background:url('img/backgrounds/bkg-kamer.jpg');
 }
-
-/******************************************************************
-	
-	BOTH DESKTOPS AND TABLETS USE THESE...
-	
-******************************************************************/	
-@media screen and (min-width: 600px) {
-
-  .youtube-player {
-    width: 640px;
-    height: 385px;
-  }
-  
-  article.presentation {
-    width: 35%;
-    margin-left: 5%;
-  }
-  
-  article p {
-    font-size: 1.8em;
-  }
-  
-  article h1 {
-    font-size: 2.6em;
-  }
-
-  a.scroll-up, a.scroll-down {
-    font-size: 4em;
-  }
-  a.scroll-down {
-    width: 400px;
-  }
-
-}/*****end tablet mobile styles******/
-
-/*****************************************************************
-******************************************************************
-******************************************************************
-DESKTOP
-******************************************************************
-******************************************************************
-*****************************************************************/
-@media screen and (min-width: 800px) {
-
-}
-/* END DESKTOP 800px */	
-
-/******************************************************************
-LARGE SCREEN TYPE SIZES
-******************************************************************/
-@media screen and (min-width: 1000px) {
-
-  body{font-size:16px;}
-  }
-
-/* END DESKTOP 1000px */	
-
-
-@media screen and (min-width: 1300px) {
-  body{font-size:18px;}
-  }
-
-/* END DESKTOP 1300px */
-
-@media screen and (min-width: 1600px) {
-  body{font-size:20px;}
-  }
-
-/* END DESKTOP 1300px */

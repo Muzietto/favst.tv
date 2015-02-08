@@ -14,7 +14,6 @@
 
     <script type='text/javascript' src='js/lib/modernizr.custom.min.js'></script>
     <script type='text/javascript' src='js/lib/jquery.js'></script>
-    <script type='text/javascript' src="js/lib/jquery.mobile-1.4.5.min.js"></script>
     <script type='text/javascript' src="js/lib/hammer.js"></script>
     <script type='text/javascript' src='js/lib/jquery.hammer.js'></script>
     <script type='text/javascript' src="js/lib/ios-orientationchange-fix.js"></script>
@@ -81,9 +80,14 @@
       <section id="section_2-3" class="page row next-item-bottom bkg_kamer kamer">
         <span class="page_size"></span><span>section_2-3 - Kamer Utrecht</span>
         <div class="fascione vert_cent clearfix">
+            <!-- http://stackoverflow.com/questions/7737557/how-can-i-make-the-youtube-player-scale-to-the-width-of-the-page-but-also-keep-t/17465040#17465040 -->
             <div class="youtube_container left">
-              <iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/VMuNhrCRHlA" allowfullscreen frameborder="0">
-              </iframe>
+              <div class="auto-resizable-iframe">
+                <div>
+                  <iframe class="youtube-playerxxx" type="text/html" src="http://www.youtube.com/embed/VMuNhrCRHlA" allowfullscreen frameborder="0">
+                  </iframe>
+                </div>
+              </div>
             </div>
             <article class="presentation left">
               <h1 class="azur">Ik zoek een kamer in Utrecht</h1>
