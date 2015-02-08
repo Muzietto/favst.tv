@@ -25,29 +25,25 @@ h3{
 	color:white;
 	width:100%;
 	display:inline-block;
-	margin:0px 0px 1.5em;
+	margin:0px 0px 0.5em;
 	font-weight:normal;
   font-style: normal;
 	text-transform:capitalize;
 }
 
-h1 {
-  margin: none !important;
-}
-
 /*links*/
 a {
-  color:#fff;text-decoration:none;display:inline;
+  color: #fff;text-decoration:none;display:inline;
 }
 a:hover {
-  color:yellow;cursor:pointer;
+  color: yellow;cursor:pointer;
 }
 a.selected {
-  color:yellow;
+  color: yellow;
 }
 
 .small{
-	font-size:..5em;
+	font-size: .5em;
 }
 
 /******************************************************************
@@ -93,11 +89,11 @@ GLOBAL GRID LAYOUT
 ******************************************************************/
 
 body{
-	width:1000%;
+	width: 1000%;
 }
 
 .column {
- 	width:10%;
+ 	width: 10%;
   /*border: 2px solid yellow;*/
 }
 
@@ -106,14 +102,14 @@ body{
 }
 
 body .split-vertical {
- 	width:10%;
+ 	width: 10%;
   display: inline;
   float: left;
   background-size: 100% 100%;
 }
 
 body .split-horizontal {
- 	height:10%;
+ 	height: 10%;
   background-size: 100% 100%;
 }
 
@@ -122,12 +118,12 @@ PAGES & COLUMNS
 ******************************************************************/
 
 .column{
-	display:inline-block;
-	float:left;
+	display: inline-block;
+	float: left;
 }
 
 .page{
-  position:relative;
+  position: relative;
 }
 
 a.scroll-up, a.scroll-down {
@@ -151,7 +147,7 @@ a.scroll-down {
 PAGE ELEMENTS
 ******************************************************************/
 
-span.page_size { margin-right: 10px; }
+span.page_size, span.page_name { font-size: 8px; }
 
 a.scroll-up, a.scroll-down {
   display: block;
@@ -173,37 +169,35 @@ a.scroll-down:hover {
 
 .fascione {
   position: relative;
-  width:100%;
+  width: 100%;
 }
 
 .vert_cent {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .youtube_container {
   position: relative;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   width: 100%; /* smaller screen */
 }
 
-/*
-.youtube-player {
-  width: 320px;
-  height: 192px;
-}
-*/
 article.presentation {
-  border: 1px solid blue;
-  width: 95%;
-  margin-left: 5%;
+  /*border: 1px solid blue;*/
+  width: 90%;
+  margin: 0 5%;
 }
 
 article p {
-  font-size: 1em;
+  font-size: .8em; /* smaller screen */
+}
+
+article h3 {
+  font-size: .9em; /* smaller screen */
 }
 
 article h1 {
-  font-size: 2em;
+  font-size: 1.4em; /* smaller screen */
 }
 
 /* http://stackoverflow.com/questions/7737557/how-can-i-make-the-youtube-player-scale-to-the-width-of-the-page-but-also-keep-t/17465040#17465040 */
@@ -229,6 +223,7 @@ article h1 {
 /******************************************************************
 	
 	BOTH DESKTOPS AND TABLETS USE THESE...
+  NB: youtube and text are set ASIDE
 	
 ******************************************************************/	
 @media screen and (min-width: 600px) {
@@ -236,25 +231,20 @@ article h1 {
   .youtube_container {
     width: 52%;
     margin-left: 7%;
-    margin-top: 50px;
+    margin-top: 25px;
   }
-/*
-  .youtube-player {
-    width: 640px;
-    height: 385px;
-  }
-*/  
+
   article.presentation {
-    width: 35%;
+    width: 31%;
     margin-left: 5%;
   }
   
   article p {
-    font-size: 1.8em;
+    font-size: 1em;
   }
   
   article h1 {
-    font-size: 2.6em;
+    font-size: 1.6em;
   }
 
   a.scroll-up, a.scroll-down {
@@ -275,6 +265,18 @@ DESKTOP
 *****************************************************************/
 @media screen and (min-width: 800px) {
 
+  article p {
+    font-size: 1.1em;
+  }
+  
+  article h3 {
+    font-size: 1.3em;
+  }
+  
+  article h1 {
+    font-size: 1.6em;
+  }
+
 }
 /* END DESKTOP 800px */	
 
@@ -283,32 +285,55 @@ LARGE SCREEN TYPE SIZES
 ******************************************************************/
 @media screen and (min-width: 1000px) {
 
-  body{font-size:16px;}
+  body {
+    font-size: 16px;
   }
+  
+}
 
 /* END DESKTOP 1000px */	
 
 
 @media screen and (min-width: 1300px) {
-  body{font-size:18px;}
+
+  body{
+    font-size:18px;
+  }
+
+  article p {
+    font-size: 1.6em;
+  }
+  
+  article h3 {
+    font-size: 1.8em;
+  }
+  
+  article h1 {
+    font-size: 2em;
   }
 
   .auto-resizable-iframe {
     max-width: 850px;
   }
-
+}
 /* END DESKTOP 1300px */
 
 @media screen and (min-width: 1600px) {
-  body{font-size:20px;}
+
+  body{
+    font-size:20px;
   }
+  
+}
 
 /* END DESKTOP 1300px */
 
 /******************************************************************
 COLOR GRID AND DIVIDER BACKGROUNDS
 ******************************************************************/
-.azur { color: #3e94d1; }
+.azur             { color: #3e94d1; }
+.groenstaat { color: #2c9364; }
+.lichtbruin { color: #d8cba9; }
 
 .bkg_turquoise  {
   background:url('img/backgrounds/turquoise.png');
