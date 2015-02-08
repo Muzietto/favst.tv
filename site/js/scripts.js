@@ -104,11 +104,11 @@ var pageScroller = function() {
 
 $('.next-item-bottom')
   .prepend($('<div/>', {class:'absolute w100pc'})
-    .append($('<a/>', {class:'scroll-up', text:'go UP'}))
+    .append($('<a/>', {class:'scroll-up', text:'\u25b2'}))
   );
 $('.next-item-bottom')
   .append($('<div/>', {class:'absolute bottom w100pc'})
-    .append($('<a/>', {class:'scroll-down', text:'go DOWN'}))
+    .append($('<a/>', {class:'scroll-down', text:'\u25bc'}))
   );
 
 $(document).ready(function() {

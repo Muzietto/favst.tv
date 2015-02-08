@@ -151,6 +151,17 @@ span.page_size, span.page_name { font-size: 8px; }
 
 a.scroll-up, a.scroll-down {
   display: block;
+  text-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+a.scroll-up:hover, a.scroll-down:hover {
+  text-shadow: 0 5px 5px rgba(255,255,255,0.5);
 }
 
 a.scroll-up {
@@ -163,8 +174,9 @@ a.scroll-up:hover {
 a.scroll-down {
   color: #3e94d1;
 }
+
 a.scroll-down:hover {
-  color: blue;
+  color: #256b9d;
 }
 
 .fascione {
