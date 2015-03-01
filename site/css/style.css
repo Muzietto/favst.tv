@@ -126,25 +126,91 @@ PAGES & COLUMNS
   position: relative;
 }
 
-a.scroll-up, a.scroll-down {
+div.left-arrow, div.right-arrow {
+  top: 50%;
+}
+
+div.right-arrow {
+  right: 0px;
+}
+
+a.scroll-up, a.scroll-down, a.scroll-left, a.scroll-right {
   margin: 0 auto;
-  width: 250px;
+  width: 50px;
   text-align: center;
   font-size: 3em;
   font-weight: bold;
   display: none;
 }
 
-a.scroll-down {
-  width: 250px;
+/******************************************************************
+HOME PAGE STUFF
+******************************************************************/
+
+.favst_logo {
+  background:url('img/draw/favst_logo.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+  width:300px;
+  height:200px;
+  position: relative;
 }
 
-a.scroll-down {
-  width: 260px;
+.favst_logo span {
+  position: absolute;
+  bottom: -30px;
+  font-size: 1.4em;
+}
+
+.home_page_professional_nav ul, .home_page_site_nav ul{
+  list-style-type: none;
+}
+
+.home_page_professional_nav ul li, .home_page_site_nav ul li{
+  float: left;
+}
+
+.home_page_professional_nav ul li{
+  width: 60px;
+  height: 60px;
+  margin-left: 40px;
+  background-size: 100% 100%;
+}
+
+.home_page_professional_nav ul:first-child {
+  margin-left: 0px;
+}
+
+.home_page_site_nav ul li{
+  width: 150px;
+  height: 30px;
+}
+
+.home_page_professional_nav {
+  width: 400px;
+  margin: 53px auto 120px;
+}
+
+.home_page_site_nav {
+  border: 1px solid blue;
+  width: 600px;
+  margin: 100px auto;
+}
+
+.facebook_item{
+  background:url('img/navs/facebook_item.png');
+}
+
+.youtube_item{
+  background:url('img/navs/youtube_item.png');
+}
+
+.linkedin_item{
+  background:url('img/navs/linkedin_item.png');
 }
 
 /******************************************************************
-PAGE ELEMENTS
+GENERIC PAGE ELEMENTS
 ******************************************************************/
 
 span.page_size, span.page_name { font-size: 8px; }
@@ -273,23 +339,15 @@ article h1 {
   article h1 {
     font-size: 1.6em;
   }
-
-  div.left-arrow, div.right-arrow {
-    top: 50%;
-  }
-  
-  div.right-arrow {
-    right: 0px;
-  }
   
   a.scroll-up, a.scroll-down, a.scroll-left, a.scroll-right {
     font-size: 4em;
   }
   
-/*  a.scroll-down {
+  a.scroll-down {
     width: 400px;
   }
-*/
+
   a.scroll-down {
     width: 400px;
   }
