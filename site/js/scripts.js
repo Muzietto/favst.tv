@@ -1,5 +1,5 @@
 // navigation state
-var $currentPage = $('#section_1-1');
+var $currentPage = $('.home_page_section');
 
 var cssToInteger = function(pxString) {
   var result = null;
@@ -50,6 +50,15 @@ window.onresize = function() {
 $(document).ready(function(){
   $(window).resize(resizzer);
   resizzer();
+
+  // find homepage
+  setTimeout(function() {
+    $('html,body').animate({
+      scrollTop:$('.home_page_section').offset().top,
+      scrollLeft:$('.home_page_section').offset().left
+    },100);
+    return false;
+  },5);
 });
 
 /* add document height as min-height to all columns*/
@@ -106,7 +115,24 @@ $('.next-item-bottom')
   .prepend($('<div/>', {class:'absolute w100pc'})
     .append($('<a/>', {class:'scroll-up', text:'\u25b2'}))
   );
+
 $('.next-item-bottom')
+  .append($('<div/>', {class:'absolute left-arrow'})
+    .append($('<a/>', {class:'scroll-left', text:'\u25c0'}))
+  );
+
+$('.next-item-bottom')
+  .append($('<div/>', {class:'absolute left-arrow'})
+    .append($('<a/>', {class:'scroll-left', text:'\u25c0'}))
+  )
+  .append($('<div/>', {class:'absolute right-arrow'})
+    .append($('<a/>', {class:'scroll-right', text:'\u25b6'}))
+  );
+  
+$('.next-item-bottom')
+  .append($('<div/>', {class:'absolute left-arrow'})
+    .append($('<a/>', {class:'scroll-left', text:'\u25c0'}))
+  )
   .append($('<div/>', {class:'absolute bottom w100pc'})
     .append($('<a/>', {class:'scroll-down', text:'\u25bc'}))
   );
@@ -119,7 +145,7 @@ $(document).ready(function() {
   // HAMMER TIME!!!
   $('.next-item-right').hammer().bind('swipeleft', horizontalScroller()); //findNextHorizontalContainer)
   $('.next-item-right').hammer().bind('swiperight', horizontalScroller(true)); //findPreviousHorizontalContainer)
-  
+
 });
 
 

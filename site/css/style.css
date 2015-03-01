@@ -149,7 +149,7 @@ PAGE ELEMENTS
 
 span.page_size, span.page_name { font-size: 8px; }
 
-a.scroll-up, a.scroll-down {
+a.scroll-up, a.scroll-down, a.scroll-left, a.scroll-right {
   display: block;
   text-shadow: 0 5px 5px rgba(0,0,0,0.5);
   -webkit-border-radius: 14px;
@@ -160,7 +160,7 @@ a.scroll-up, a.scroll-down {
   transition: all 0.4s ease-in-out;
 }
 
-a.scroll-up:hover, a.scroll-down:hover {
+a.scroll-up:hover, a.scroll-down:hover, a.scroll-left:hover, a.scroll-right:hover {
   text-shadow: 0 5px 5px rgba(255,255,255,0.5);
 }
 
@@ -177,6 +177,21 @@ a.scroll-down {
 
 a.scroll-down:hover {
   color: #256b9d;
+}
+
+a.scroll-left {
+  color: #ff00ff;
+}
+a.scroll-left:hover {
+  color: #992667;
+}
+
+a.scroll-right {
+  color: #14d100;
+}
+
+a.scroll-right:hover {
+  color: #329d27;
 }
 
 .fascione {
@@ -259,9 +274,22 @@ article h1 {
     font-size: 1.6em;
   }
 
-  a.scroll-up, a.scroll-down {
+  div.left-arrow, div.right-arrow {
+    top: 50%;
+  }
+  
+  div.right-arrow {
+    right: 0px;
+  }
+  
+  a.scroll-up, a.scroll-down, a.scroll-left, a.scroll-right {
     font-size: 4em;
   }
+  
+/*  a.scroll-down {
+    width: 400px;
+  }
+*/
   a.scroll-down {
     width: 400px;
   }
@@ -399,5 +427,9 @@ COLOR GRID AND DIVIDER BACKGROUNDS
   background:url('img/backgrounds/destaat_pink.png');
 }
 .bkg_kamer {
-  background:url('img/backgrounds/bkg-kamer.jpg');
+  background:url('img/backgrounds/bkg_kamer.jpg');
+}
+.bkg_schema {
+  background:url('img/backgrounds/bkg_schema.jpg');
+  background-size: 100% 100%;
 }
