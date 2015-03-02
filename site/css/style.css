@@ -151,14 +151,15 @@ HOME PAGE STUFF
   background:url('img/draw/favst_logo.png');
   background-size: 100% 100%;
   margin: 0 auto;
-  width:300px;
+  width:350px;
   height:200px;
   position: relative;
 }
 
 .favst_logo span {
   position: absolute;
-  bottom: -30px;
+  margin-left: 8px;
+  bottom: -60px;
   font-size: 1.4em;
 }
 
