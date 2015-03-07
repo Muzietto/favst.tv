@@ -1,5 +1,5 @@
 // navigation state
-var $currentPage = $('.home_page_section');
+var $currentPage = $('.home_page');
 
 var cssToInteger = function(pxString) {
   var result = null;
@@ -54,8 +54,8 @@ $(document).ready(function(){
   // find homepage
   setTimeout(function() {
     $('html,body').animate({
-      scrollTop:$('.home_page_section').offset().top,
-      scrollLeft:$('.home_page_section').offset().left
+      scrollTop:$('.home_page').offset().top,
+      scrollLeft:$('.home_page').offset().left
     },100);
     return false;
   },5);
@@ -111,28 +111,22 @@ var pageScroller = function() {
   return false;
 }
 
-$('.next-item-bottom')
+$('.nav_arrow_up')
   .prepend($('<div/>', {class:'absolute w100pc'})
     .append($('<a/>', {class:'scroll-up', text:'\u25b2'}))
   );
 
-$('.next-item-bottom')
+$('.nav_arrow_left')
   .append($('<div/>', {class:'absolute left-arrow'})
     .append($('<a/>', {class:'scroll-left', text:'\u25c0'}))
   );
 
-$('.next-item-bottom')
-  .append($('<div/>', {class:'absolute left-arrow'})
-    .append($('<a/>', {class:'scroll-left', text:'\u25c0'}))
-  )
+$('.nav_arrow_right')
   .append($('<div/>', {class:'absolute right-arrow'})
     .append($('<a/>', {class:'scroll-right', text:'\u25b6'}))
   );
   
-$('.next-item-bottom')
-  .append($('<div/>', {class:'absolute left-arrow'})
-    .append($('<a/>', {class:'scroll-left', text:'\u25c0'}))
-  )
+$('.nav_arrow_down')
   .append($('<div/>', {class:'absolute bottom w100pc'})
     .append($('<a/>', {class:'scroll-down', text:'\u25bc'}))
   );
@@ -141,6 +135,8 @@ $(document).ready(function() {
   
   $('.scroll-down').click(verticalScroller()); //findNextVerticalContainer)
   $('.scroll-up').click(verticalScroller(true)); //findPreviousVerticalContainer)
+  $('a.scroll-right').bind('click', horizontalScroller()); //findNextHorizontalContainer)
+  $('a.scroll-left').bind('click', horizontalScroller(true)); //findPreviousHorizontalContainer)
 
   // HAMMER TIME!!!
   $('.next-item-right').hammer().bind('swipeleft', horizontalScroller()); //findNextHorizontalContainer)

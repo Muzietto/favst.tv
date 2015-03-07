@@ -151,8 +151,8 @@ HOME PAGE STUFF
   background:url('img/draw/favst_logo.png');
   background-size: 100% 100%;
   margin: 0 auto;
-  width:350px;
-  height:200px;
+  width:378px;
+  height:236px;
   position: relative;
 }
 
@@ -195,7 +195,7 @@ HOME PAGE STUFF
 .home_page_site_nav {
   border: 1px solid blue;
   width: 600px;
-  margin: 100px auto;
+  margin: 100px auto 0px;
 }
 
 .facebook_item{
@@ -214,7 +214,10 @@ HOME PAGE STUFF
 GENERIC PAGE ELEMENTS
 ******************************************************************/
 
-span.page_size, span.page_name { font-size: 8px; }
+span.page_size, span.page_name { 
+  margin-left: 3px;
+  font-size: 8px;
+}
 
 a.scroll-up, a.scroll-down, a.scroll-left, a.scroll-right {
   display: block;
@@ -315,7 +318,18 @@ article h1 {
 }
 
 /******************************************************************
+
+	END OF SMARTPHONE AREA
+  TODO: try to discriminate between portrait and landscape
+  @media only screen and (orientation: landscape) {}
+
+  TODO: verify usage of Modernizr .touch
+  .touch .your-element {}
 	
+******************************************************************/	
+
+/******************************************************************
+
 	BOTH DESKTOPS AND TABLETS USE THESE...
   NB: youtube and text are set ASIDE
 	
@@ -434,6 +448,13 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 .groenstaat { color: #2c9364; }
 .lichtbruin { color: #d8cba9; }
 
+.bkg_white  {
+  background-color: white;
+}
+
+.bkg_whitesmoke {
+  background-color: whitesmoke;
+}
 .bkg_turquoise  {
   background:url('img/backgrounds/turquoise.png');
 }
@@ -467,8 +488,17 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 .bkg_blue_turquoise  {
   background:url('img/backgrounds/blue_turquoise.png');
 }
+.bkg_yellow_turquoise  {
+  background:url('img/backgrounds/yellow_turquoise.png');
+}
 .bkg_turquoise_blue  {
   background:url('img/backgrounds/turquoise_blue.png');
+}
+.bkg_green  {
+  background-color: #188100;
+}
+.bkg_yellow {
+  background-color: #ffba00;
 }
 .bkg_destaat {
   background:url('img/backgrounds/destaat.png');
@@ -476,19 +506,31 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 .bkg_interreel {
   background-color: #ffffff;
 }
-.bkg_destaat_interreel {
-  background:url('img/backgrounds/destaat_interreel.png');
+.bkg_interreel_destaat {
+  background:url('img/backgrounds/interreel_destaat.png');
 }
-.bkg_interreel_kamer {
-  background:url('img/backgrounds/interreel_kamer.png');
+.bkg_grey_destaat {
+  background:url('img/backgrounds/grey_destaat.png');
+}
+.bkg_kamer_interreel {
+  background:url('img/backgrounds/kamer_interreel.png');
 }
 .bkg_destaat_pink {
   background:url('img/backgrounds/destaat_pink.png');
 }
+.bkg_turquoise_destaat {
+  background:url('img/backgrounds/turquoise_destaat.png');
+}
+.bkg_green_kamer {
+  background:url('img/backgrounds/green_kamer.png');
+}
 .bkg_kamer {
   background:url('img/backgrounds/bkg_kamer.jpg');
 }
-.bkg_schema {
+.bkg_vissen {
+  background:url('img/backgrounds/bkg_vissen.jpg');
+}
+.bkg_schema { /* homepage */
   background:url('img/backgrounds/bkg_schema.jpg');
   background-size: 100% 100%;
 }

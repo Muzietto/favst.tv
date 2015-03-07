@@ -1,0 +1,277 @@
+
+@font-face {
+  font-family: 'walsheim';
+  src: url("webfonts/gt-walsheim-medium-web.eot");
+  src: url("webfonts/gt-walsheim-medium-web.eot?#iefix") format("embedded-opentype"), url("webfonts/gt-walsheim-medium-web.woff") format("woff"), url("webfonts/gt-walsheim-medium-web.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  font-family:'walsheim',sans-serif;
+  letter-spacing:.2em;
+  background:#A4A3A4
+}
+
+h3{
+	font-size:1em;
+	color:white;
+	width:100%;
+	display:inline-block;
+	margin:0px 0px 1.5em;
+	font-weight:normal;
+  font-style: normal;
+	text-transform:capitalize;
+}
+
+h1 {
+  margin: none !important;
+}
+
+/*links*/
+a {
+  color:#fff;text-decoration:none;display:inline;
+}
+a:hover {
+  color:yellow;cursor:pointer;
+}
+a.selected {
+  color:yellow;
+}
+
+.small{
+	font-size:..5em;
+}
+
+/******************************************************************
+GENERAL
+******************************************************************/
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/*clearfix*/
+.clearfix:before, .clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* For IE 6/7 only Include this rule to trigger hasLayout and contain floats.*/
+.clearfix {
+  *zoom: 1;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.w100pc {
+  width: 100%;
+}
+
+.w12pc {
+  width: 12%;
+}
+
+.bottom {
+  bottom: 0px;
+}
+
+.right {
+  right: 0px;
+}
+/******************************************************************
+RESPONSIVE LAYOUT SHIZENS
+******************************************************************/
+
+/*horizontal layout styles for non-mobile devices*/
+body{
+	/*width:1000%;*/
+}
+
+.column {
+ 	width:10000px;
+  height:500px;
+  border: 2px solid yellow;
+}
+
+
+.page { 
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.row {
+  border: 2px solid green;
+}
+
+body .split-vertical {
+ 	width:10%;
+  display: inline;
+  float: left;
+  background-size: 100% 100%;
+}
+
+body .split-horizontal {
+ 	height:10%;
+  background-size: 100% 100%;
+}
+
+/******************************************************************
+PAGES & COLUMNS
+******************************************************************/
+
+/*
+.column{
+	display:inline-block;
+	float:left;
+}
+
+.page{
+  position:relative;
+}
+*/
+a.scroll-up, a.scroll-down, a.scroll-left, a.scroll-right {
+  font-size: 3em;
+  font-weight: bold;
+  display: none;
+}
+
+a.scroll-up, a.scroll-down {
+  margin: 0 auto;
+  width: 250px;
+  text-align: center;
+}
+
+a.scroll-down {
+  width: 250px;
+}
+
+a.scroll-down {
+  width: 260px;
+}
+
+a.scroll-left, a.scroll-right {
+  display:block;
+  margin-top: 2em;
+}
+
+/******************************************************************
+PAGE ELEMENTS
+******************************************************************/
+
+  a.scroll-up, a.scroll-down {
+    display: block;
+  }
+
+  a.scroll-up {
+    color: #fffd80;
+  }
+  a.scroll-up:hover {
+    color: #ffe800;
+  }
+
+  a.scroll-down {
+    color: #3e94d1;
+  }
+  a.scroll-down:hover {
+    color: blue;
+  }
+
+  
+/******************************************************************
+COLOUR GRID AND DIVIDER BACKGROUNDS
+******************************************************************/
+.bkg_turquoise  {
+  background:url('img/backgrounds/turquoise.png');
+}
+.bkg_pink_turquoise  {
+  background:url('img/backgrounds/pink_turquoise.png');
+}
+.bkg_pink  {
+  background:url('img/backgrounds/pink.png');
+}
+.bkg_grey_pink  {
+  background:url('img/backgrounds/grey_pink.png');
+}
+.bkg_grey  {
+  background:url('img/backgrounds/grey.png');
+}
+.bkg_blue_grey  {
+  background:url('img/backgrounds/blue_grey.png');
+}
+.bkg_blue  {
+  background:url('img/backgrounds/blue.png');
+}
+.bkg_pink_blue  {
+  background:url('img/backgrounds/pink_blue.png');
+}
+.bkg_blue_pink  {
+  background:url('img/backgrounds/blue_pink.png');
+}
+.bkg_turquoise_pink  {
+  background:url('img/backgrounds/turquoise_pink.png');
+}
+.bkg_blue_turquoise  {
+  background:url('img/backgrounds/blue_turquoise.png');
+}
+.bkg_turquoise_blue  {
+  background:url('img/backgrounds/turquoise_blue.png');
+}
+
+/******************************************************************
+	
+	BOTH DESKTOPS AND TABLETS USE THESE...
+	
+******************************************************************/	
+@media screen and (min-width: 600px) {
+a.scroll-up, a.scroll-down {
+  font-size: 4em;
+}
+a.scroll-down {
+  width: 400px;
+}
+
+}/*****end tablet mobile styles******/
+
+/*****************************************************************
+******************************************************************
+******************************************************************
+DESKTOP
+******************************************************************
+******************************************************************
+*****************************************************************/
+@media screen and (min-width: 800px) {
+
+}
+/* END DESKTOP 800px */	
+
+/******************************************************************
+LARGE SCREEN TYPE SIZES
+******************************************************************/
+@media screen and (min-width: 1000px) {
+
+body{font-size:16px;}
+}
+/* END DESKTOP 1000px */	
+
+
+@media screen and (min-width: 1300px) {
+body{font-size:18px;}
+}
+/* END DESKTOP 1300px */
+
+@media screen and (min-width: 1600px) {
+body{font-size:20px;}
+}
+/* END DESKTOP 1300px */
