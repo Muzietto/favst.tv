@@ -93,6 +93,8 @@ var findTargetDiv = function(cssClass, backwards) {
       };
 
     $('html, body').animate(scrollObject, timeLapse);
+    
+    // TODO - adjust url in page history
     return false;  
   }
 }
@@ -104,34 +106,42 @@ var verticalScroller = function(backwards) {
   return findTargetDiv('next-item-bottom', backwards);  
 }
 
-// click handler for .page
-var pageScroller = function() {
-  var offset = $(this).offset();
-  window.scrollTo(offset.left,offset.top);
-  return false;
+// click handler for .page and .home_page_site_nav
+var pageScroller = function($targetDiv) {
+  $nextContainer = $targetDiv || $(this);
+  $currentPage = $nextContainer;
+    
+  var scrollObject = { 
+      scrollTop: $nextContainer.offset().top, 
+      scrollLeft: $nextContainer.offset().left 
+    };
+  $('html, body').animate(scrollObject, 600);
+  
+  // TODO - adjust url in page history
+  //return false;
 }
 
-$('.nav_arrow_up')
-  .prepend($('<div/>', {class:'absolute w100pc'})
-    .append($('<a/>', {class:'scroll-up', text:'\u25b2'}))
-  );
-
-$('.nav_arrow_left')
-  .append($('<div/>', {class:'absolute left-arrow'})
-    .append($('<a/>', {class:'scroll-left', text:'\u25c0'}))
-  );
-
-$('.nav_arrow_right')
-  .append($('<div/>', {class:'absolute right-arrow'})
-    .append($('<a/>', {class:'scroll-right', text:'\u25b6'}))
-  );
-  
-$('.nav_arrow_down')
-  .append($('<div/>', {class:'absolute bottom w100pc'})
-    .append($('<a/>', {class:'scroll-down', text:'\u25bc'}))
-  );
-
 $(document).ready(function() {
+
+  $('.nav_arrow_up')
+    .prepend($('<div/>', {class:'absolute w100pc'})
+      .append($('<a/>', {class:'scroll-up', text:'\u25b2'}))
+    );
+
+  $('.nav_arrow_left')
+    .append($('<div/>', {class:'absolute left-arrow'})
+      .append($('<a/>', {class:'scroll-left', text:'\u25c0'}))
+    );
+
+  $('.nav_arrow_right')
+    .append($('<div/>', {class:'absolute right-arrow'})
+      .append($('<a/>', {class:'scroll-right', text:'\u25b6'}))
+    );
+    
+  $('.nav_arrow_down')
+    .append($('<div/>', {class:'absolute bottom w100pc'})
+      .append($('<a/>', {class:'scroll-down', text:'\u25bc'}))
+    );
   
   $('.scroll-down').click(verticalScroller()); //findNextVerticalContainer)
   $('.scroll-up').click(verticalScroller(true)); //findPreviousVerticalContainer)
@@ -142,6 +152,11 @@ $(document).ready(function() {
   $('.next-item-right').hammer().bind('swipeleft', horizontalScroller()); //findNextHorizontalContainer)
   $('.next-item-right').hammer().bind('swiperight', horizontalScroller(true)); //findPreviousHorizontalContainer)
 
+  $('.home_page_site_nav li.video_item').click(function(){ pageScroller($('section.video_1')); });
+  $('.home_page_site_nav li.music_item').click(function(){ pageScroller($('section.music_1')); });
+  $('.home_page_site_nav li.business_item').click(function(){ pageScroller($('section.business_1')); });
+  $('.home_page_site_nav li.bio_item').click(function(){ pageScroller($('section.bio_1')); });
+  
 });
 
 
