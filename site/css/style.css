@@ -167,9 +167,10 @@ HOME PAGE STUFF
 
 .favst_logo span {
   position: absolute;
-  margin-left: 50px;
+  margin-left: 5px;
   bottom: -60px;
-  font-size: 1.3em;
+  font-size: 1.6em;
+  text-shadow: 2px 2px 1px rgba(255,255,255,1);
 }
 
 .home_page_professional_nav ul, .home_page_site_nav ul{
@@ -205,6 +206,10 @@ HOME PAGE STUFF
   width: 150px;
   height: 30px;
   cursor: pointer;
+  color: #fc0074;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 1px rgba(255,255,255,1);
 }
 
 .home_page_professional_nav {
@@ -588,6 +593,9 @@ COLOR GRID AND DIVIDER BACKGROUNDS
   background-size: 100%;
   background-position-y: bottom;
   background-repeat: no-repeat;
+}
+.bkg_gymnasium  p {
+  color: #1d7373;
 }
 .bkg_vinticious {
   background:url('img/backgrounds/bkg_vinticious.jpg');

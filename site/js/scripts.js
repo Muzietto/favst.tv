@@ -74,6 +74,7 @@ else {
 var findTargetDiv = function(cssClass, backwards) {
   var firstOrLast = (backwards) ? ':last' : ':first';
   var searchMethod = (backwards) ? 'prevAll' : 'nextAll';
+
   return function(e) {
     var timeLapse = 600;
     
@@ -84,6 +85,12 @@ var findTargetDiv = function(cssClass, backwards) {
       $nextContainer = $container.parent().find('.'+cssClass+firstOrLast);
     }
 
+    // stop all players
+    // ref: http://9bugs.in/pause-youtube-video-within-iframe-using-external-button-click-in-javascript-or-jquery-268
+    $('.youtube_player_iframe').each(function(){
+      this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+    });
+
     // set navigation state
     $currentPage = $nextContainer;
     
@@ -93,8 +100,9 @@ var findTargetDiv = function(cssClass, backwards) {
       };
 
     $('html, body').animate(scrollObject, timeLapse);
-    
-    // TODO - adjust url in page history
+
+    // adjust url hash in page history
+    location.hash = $currentPage.prop('id');
     return false;  
   }
 }
@@ -117,8 +125,9 @@ var pageScroller = function($targetDiv) {
     };
   $('html, body').animate(scrollObject, 600);
   
-  // TODO - adjust url in page history
-  //return false;
+  // adjust url hash in page history
+  location.hash = $currentPage.prop('id');
+  return false;
 }
 
 $(document).ready(function() {
@@ -156,7 +165,7 @@ $(document).ready(function() {
   $('.home_page_site_nav li.music_item').click(function(){ pageScroller($('section.music_1')); });
   $('.home_page_site_nav li.business_item').click(function(){ pageScroller($('section.business_1')); });
   $('.home_page_site_nav li.bio_item').click(function(){ pageScroller($('section.bio_1')); });
-  
+
 });
 
 
