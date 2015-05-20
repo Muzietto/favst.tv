@@ -156,6 +156,15 @@ HOME PAGE STUFF
   position: relative;
 }
 
+.favst_smaller_logo {
+  background:url('img/draw/favst_logo.png');
+  background-size: 100% 100%;
+  margin: 0 auto;
+  width:126px;
+  height:79px;
+  position: relative;
+}
+
 .favst_logo span {
   position: absolute;
   margin-left: 50px;
@@ -325,7 +334,8 @@ article h1 {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: 77%;
+  /*height: 100%;*/
 }
 
 /******************************************************************
@@ -511,12 +521,6 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 .bkg_yellow {
   background-color: #ffba00;
 }
-.bkg_destaat {
-  background:url('img/backgrounds/destaat.png');
-}
-.bkg_interreel {
-  background-color: #ffffff;
-}
 .bkg_interreel_destaat {
   background:url('img/backgrounds/interreel_destaat.png');
 }
@@ -535,13 +539,83 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 .bkg_green_kamer {
   background:url('img/backgrounds/green_kamer.png');
 }
+.bkg_img {
+}
+.bkg_destaat {
+  background:url('img/backgrounds/bkg_destaat.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+.bkg_interreel {
+  background:url('img/backgrounds/bkg_interreel.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
 .bkg_kamer {
   background:url('img/backgrounds/bkg_kamer.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
 }
 .bkg_vissen {
   background:url('img/backgrounds/bkg_vissen.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
 }
-.bkg_schema { /* homepage */
+.bkg_schema { /* this is the homepage!!! */
   background:url('img/backgrounds/bkg_schema.jpg');
-  background-size: 100% 100%;
+  background-size: 100%;
+  /*background-position-y: bottom;*/
+  background-repeat: no-repeat;
+}
+.bkg_bio1 {
+  background:url('img/backgrounds/bkg_bio1.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+.bkg_bio2 {
+  background:url('img/backgrounds/bkg_bio2.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+.bkg_gymnasium {
+  background:url('img/backgrounds/bkg_gymnasium.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+.bkg_vinticious {
+  background:url('img/backgrounds/bkg_vinticious.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+.bkg_drostenburg {
+  background:url('img/backgrounds/bkg_drostenburg.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+.bkg_traineeship {
+  background:url('img/backgrounds/bkg_traineeship.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+.bkg_controle {
+  background:url('img/backgrounds/bkg_controle.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+.bkg_heveadorp {
+  background:url('img/backgrounds/bkg_heveadorp.jpg');
+  background-size: 100%;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
 }

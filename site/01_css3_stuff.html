@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+
+		body {
+			background: url(css3fwd-code/img/space-bg.png) repeat-x fixed -80% 0;
+			background:
+				url(css3fwd-code/img/stars-1.png) repeat-x fixed -130% 0,
+				url(css3fwd-code/img/stars-2.png) repeat-x fixed 40% 0,
+				url(css3fwd-code/img/space-bg.png) repeat-x fixed -80% 0,
+				url(css3fwd-code/img/clouds.png) repeat-x fixed 100% 0;
+			background-color: #1A1A1A;
+			font-family:Arial;
+		}
+
+		ul li {list-style-type: none;}
+		.foo {
+			padding: 5px 10px;
+			background: #99CC33;
+			font-weight:bold;
+
+			-webkit-transition: background 0.9s ease, font 2.3s ease, color 2.6s linear ;
+			-moz-transition: all 0.9s ease 0.5s ;
+			transition: background 0.9s ease 0.5s ;
+		}
+
+		a.foo:hover,a.foo:focus {
+			font-size:48px;
+			background: #669900;
+			color:red;
+		}
+
+		#nav{
+			float:right;
+			padding: 42px 0 0 30px;
+			font-size:48px;
+		}
+
+		#nav li {
+		float:left;
+
+		margin: 0 0 0 5px;
+		}
+
+		#nav li a {
+			padding: 5px 15px;
+			font-weight:bold;
+			color: #CCCCCC;
+			color: rgba(255,255,255,0.6);
+			text-shadow: 0 5px 5px rgba(0,0,0,0.5);
+			-webkit-border-radius: 14px;
+			-moz-border-radius: 14px;
+			border-radius: 14px;
+			-webkit-transition: all 0.4s ease-in-out;
+			-moz-transition: all 0.4s ease-in-out;
+			transition: all 0.4s ease-in-out;
+		}
+
+		#nav li a:hover, 
+		#nav li a:focus {
+			color:#FFFFFF;
+			text-shadow: 0 5px 5px rgba(255,255,255,0.5);
+			background: rgba(255,255,255,0.15);
+		}
+
+		#footer-logos, #picture-gallery {
+			text-align:center;
+		}
+		#footer-logos li {
+			display:inline;
+		}
+		#picture-gallery li {
+			float:left;
+		}
+
+		#picture-gallery li {
+			margin: 0 20px;
+			padding: 10px;
+
+		}
+
+		a img {
+			border:none;
+		}
+
+		#footer-logos li a img {
+			opacity: 0.25;
+			transition: all 0.5s ease;
+		}
+
+		#footer-logos li a:hover img,
+		#footer-logos li a:focus img {
+			opacity: 0.65;
+		}
+
+		#picture-gallery li a img {
+			transition: all 0.5s ease-in-out;
+		}
+
+		#picture-gallery li a:hover img,
+		#picture-gallery li a:focus img {
+			-webkit-transform: scale(1.5) rotate(-10deg);
+			transform: scale(1.5) rotate(-10deg);
+			box-shadow: 20px 4px 30px rgba(0,0,0,0.5);
+		}
+
+		#cube {
+			text-align:center;
+		}
+
+		#cube li img {
+			border:1px solid white;
+		}
+		#cat {
+			-webkit-transform: translate(-103px,133px) skew(0deg, 30deg);
+			transform: translate(-103px,133px) skew(0deg, 30deg);
+		}
+		#gnome {
+			-webkit-transform: scale(1.2) translate(58px,-5px) skew(0deg, -15deg);
+			transform: scale(1.2) translate(58px,-5px) skew(0deg, -15deg);
+		}
+		#mower {
+			-webkit-transform: scale(0.9) translate(-90px,-298px) skew(60deg, -15deg);
+			transform: scale(0.9) translate(-90px,-298px) skew(60deg, -15deg);
+		}
+		</style>
+		
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	</head>
+
+	<body>
+		<ul id="nav">
+			<li>
+				<a href="#">News</a>
+			</li>
+			<li>
+				<a href="#">Things</a>
+			</li>
+			<li>
+				<a href="#">Stuff</a>
+			</li>
+		</ul>
+		<br clear="both"/>
+
+		<a href="#" class="foo">transition me!</a>
+		<a href="#" class="bar">don't transition me!</a>
+
+		<ul id="picture-gallery">
+			<li>
+				<a href="#">   
+					<img src="css3fwd-code/img/thing-cat.png"/>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="css3fwd-code/img/thing-gnome.png"/>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="css3fwd-code/img/thing-mower.png"/>
+				</a>
+			</li>
+		</ul>
+		<br clear="both"/>
+
+		<ul id="cube">
+			<li>
+				<a href="#">   
+					<img id="cat" src="css3fwd-code/img/thing-cat.png"/>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img id="gnome" src="css3fwd-code/img/thing-gnome.png"/>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img id="mower" src="css3fwd-code/img/thing-mower.png"/>
+				</a>
+			</li>
+		</ul>
+		<br clear="both"/>
+		
+		<style>
+		.sfondoforma {
+			width:260px;
+			float:right;
+			background-color:#FFD873;
+			padding:20px;
+			border-radius:7px;
+			opacity:0.8;
+		}
+		
+		#thing-alerts fieldset {
+			margin: 0 0 10px 0;
+			border: 0;
+		}
+		
+		#thing-alerts label {
+			display: block;
+			font-weight: bold;
+			line-height: 1.4;
+			color: #666666;
+			color: rgba(0, 0, 0, 0.6);
+			text-shadow: 0 1px 1px #FFFFFF;
+		}
+
+		#thing-alerts fieldset:last-child {
+			margin: 0;
+		}
+		
+		#thing-alerts fieldset input[type="text"] {
+			width: 215px;
+			padding: 5px 8px;
+			font-size: 1.2em;
+			color: #666666;
+			border: none;
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 12%, from(#AAAAAA), to(#FFFFFF));
+			background-image: -moz-linear-gradient(0% 12% 90deg, #FFFFFF, #999999);
+			background-color: #FFFFFF;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			-o-border-radius: 4px;
+			border-radius: 4px;
+		}
+		
+		#thing-alerts input[type="submit"] {
+			padding: 8px 15px;
+			font-family: Helvetica, Arial, sans-serif;
+			font-weight: bold;
+			line-height: 1;
+			color: #444444;
+			border: none;
+			text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9);
+			box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#BBBBBB));
+			background-image: -moz-linear-gradient(0 100% 90deg, #FFFFFF, #BBBBBB);
+			background-color: #FFFFFF;
+			border-radius:25px;
+		}
+		
+		@-webkit-keyframes pulse {
+			0% {
+				-webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+			}
+			50% {
+				-webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
+			}
+			100% {
+				-webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+			}
+		}
+
+		#thing-alerts input[type="text"]:focus {
+			-webkit-animation: pulse 1.5s infinite ease-in-out;
+			-webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.5);
+			-moz-box-shadow: 0 0 12px rgba(51, 204, 255, 0.5);
+			box-shadow: 0 0 12px rgba(51, 204, 255, 0.5);
+		}
+				
+		#thing-alerts input[type="submit"]:hover,
+		#thing-alerts input[type="submit"]:focus {
+			-webkit-animation: pulse 1.5s infinite ease-in-out;
+		}
+		</style>
+
+		<div class="sfondoforma" style="">
+			<form action="" id="thing-alerts">
+				<fieldset>
+					<label for="alerts-name">Your Name</label>
+					<input type="text" id="alerts-name" />
+				</fieldset>
+				<fieldset>
+					<label for="alerts-email">Your Email</label>
+					<input type="text" id="alerts-email" />
+				</fieldset>
+				<fieldset>
+					<input type="submit" value="Subscribe" />
+				</fieldset>
+			</form>
+		</div>
+		<br clear="both"/>
+
+		<ul id="footer-logos">
+			<li>
+				<a href="#">   
+					<img src="css3fwd-code/img/logo-sb.png" alt="SimpleBits logo" />
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="css3fwd-code/img/icon-feed.png" alt="RSS feed" />
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="css3fwd-code/img/icon-bitman.png" alt="BitMan" />
+				</a>
+			</li>
+		</ul>
+	</body>
+</html>
