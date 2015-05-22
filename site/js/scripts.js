@@ -118,7 +118,7 @@ var verticalScroller = function(backwards) {
 var pageScroller = function($targetDiv) {
   $nextContainer = $targetDiv || $(this);
   $currentPage = $nextContainer;
-    
+
   var scrollObject = { 
       scrollTop: $nextContainer.offset().top, 
       scrollLeft: $nextContainer.offset().left 
@@ -127,7 +127,7 @@ var pageScroller = function($targetDiv) {
   
   // adjust url hash in page history
   location.hash = $currentPage.prop('id');
-  return false;
+  //return false;
 }
 
 $(document).ready(function() {

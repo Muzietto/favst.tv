@@ -151,8 +151,8 @@ HOME PAGE STUFF
   background:url('img/draw/favst_logo.png');
   background-size: 100% 100%;
   margin: 0 auto;
-  width:378px;
-  height:236px;
+  width:460px;
+  height:300px;
   position: relative;
 }
 
@@ -167,13 +167,13 @@ HOME PAGE STUFF
 
 .favst_logo span {
   position: absolute;
-  margin-left: 5px;
+  margin-left: 35px;
   bottom: -60px;
   font-size: 1.6em;
   text-shadow: 2px 2px 1px rgba(255,255,255,1);
 }
 
-.home_page_professional_nav ul, .home_page_site_nav ul{
+.home_page_professional_nav ul, .home_page_site_nav ul, .pocket_menu_nav ul, .bio_professional_nav ul {
   list-style-type: none;
 }
 
@@ -212,9 +212,34 @@ HOME PAGE STUFF
   text-shadow: 2px 2px 1px rgba(255,255,255,1);
 }
 
+.pocket_menu_nav {
+  position: absolute;
+  font-size: 2em;
+}
+
+.pocket_menu_nav a {
+  color: inherit;
+}
+
+.pocket_menu_nav a:hover {
+  color: yellow;
+}
+
+.pocket_menu_nav.bottom_left {
+  bottom: 5%;
+  left: 3%;
+}
+
 .home_page_professional_nav {
   width: 400px;
   margin: 15px auto 120px;
+}
+
+.bio_professional_nav {
+  position: absolute;
+  font-size: 2em;
+  right: 15%;
+  
 }
 
 .home_page_site_nav {
@@ -471,8 +496,10 @@ LARGE SCREEN TYPE SIZES
 COLOR GRID AND DIVIDER BACKGROUNDS
 ******************************************************************/
 .azur             { color: #3e94d1; }
-.groenstaat { color: #2c9364; }
-.lichtbruin { color: #d8cba9; }
+.groenstaat  { color: #2c9364; }
+.lichtbruin  { color: #d8cba9; }
+.cyan             { color: #11efc6; }
+.black           { color: black; }
 
 .bkg_white  {
   background-color: white;
