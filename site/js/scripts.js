@@ -76,7 +76,7 @@ var findTargetDiv = function(cssClass, backwards) {
   var searchMethod = (backwards) ? 'prevAll' : 'nextAll';
 
   return function(e) {
-    var timeLapse = 600;
+    var timeLapse = 1200;
     
     var $container = ($(this).hasClass(cssClass)) ? $(this) : $(this).parents('.' + cssClass);
     var $nextContainer = $container[searchMethod]('.'+cssClass+':first');
@@ -123,7 +123,7 @@ var pageScroller = function($targetDiv) {
       scrollTop: $nextContainer.offset().top, 
       scrollLeft: $nextContainer.offset().left 
     };
-  $('html, body').animate(scrollObject, 600);
+  $('html, body').animate(scrollObject, 1200);
   
   // adjust url hash in page history
   location.hash = $currentPage.prop('id');

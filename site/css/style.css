@@ -565,11 +565,17 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 .bkg_destaat_pink {
   background:url('img/backgrounds/destaat_pink.png');
 }
+.bkg_destaat_heveadorp {
+  background:url('img/backgrounds/destaat_heveadorp.png');
+}
 .bkg_turquoise_destaat {
   background:url('img/backgrounds/turquoise_destaat.png');
 }
 .bkg_green_kamer {
   background:url('img/backgrounds/green_kamer.png');
+}
+.bkg_home_interreel {
+  background:url('img/backgrounds/bkg_home_interreel.png');
 }
 .bkg_img {
 }
