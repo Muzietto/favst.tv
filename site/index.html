@@ -24,7 +24,7 @@
   
     <!-- START COLUMN 1 - BIO -->
     <section id="section_1" class="column next-item-right column_bio">
-      <section id="section_1-1" class="home_page page row next-item-bottom bkg_schema nav_arrow_down nav_arrow_right"> <!-- ex bkg_turquoise -->
+      <section id="section_1-1" class="home_page page row next-item-bottom bkg_schema">
         <span class="page_size"></span><span class="page_name">section_1-1 home_page</span>
         <nav class="home_page_professional_nav">
           <ul>
@@ -40,10 +40,10 @@
         </div>
         <nav class="home_page_site_nav">
           <ul>
-            <li class="bio_item">bio</li>
-            <li class="video_item">videos</li>
-            <li class="music_item">liederen</li>
-            <li class="business_item">zaken</li>
+            <li class="bio_item"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">bio</a></li>
+            <li class="video_item"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">videos</a></li>
+            <li class="music_item"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">liederen</a></li>
+            <li class="business_item"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">zaken</a></li>
           </ul>
         </nav>
         
@@ -91,11 +91,11 @@
         
         <nav class="pocket_menu_nav bottom_left">
           <ul>
-            <li class="cyan">^bio</li>
-            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">>videos</a></li>
-            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">>liederen</a></li>
-            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">>zaken</a></li>
-            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">home</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">^bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">&gt;videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">&gt;liederen</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">&gt;zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">^home</a></li>
           </ul>
         </nav>
 
@@ -135,7 +135,15 @@
               <h1 class="lichtbruin">Interreel</h1>
               <p>In de zomer van ‘13 maakten mijn maatjes en ik een fijne reis door Europa, die wellicht niet zo trippy was als je zou verwachten na het zien van dit filmpje.</p>
             </article>
-        </div>
+        </div>        
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">&gt;liederen</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">&gt;zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
       
       <div id="section_2-split-1" class="split-horizontal bkg_interreel_destaat">
@@ -157,17 +165,26 @@
             <article class="presentation left">
               <h1 class="lichtbruin">Build That Buy That</h1>
               <h3 class="groenstaat">Videoclip voor De Staat</h3>
-              <p>Ik deed mee aan een videoclip-contest voor De Staat. Helaas heeft het filmpje niet gewonnen, 
+              <p class="kleiner">Ik deed mee aan een videoclip-contest voor De Staat. Helaas heeft het filmpje niet gewonnen, 
               maar werd ik wel gevraagd om de <a href="#section_4-2" target="_self">officiële tour-aankondigings-spot</a> te maken.</p>
             </article>
         </div>
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">^videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">&gt;liederen</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">&gt;zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
 
       <div id="section_2-split-3" class="split-horizontal bkg_destaat_heveadorp">
         <span class="page_name">section_2-split-2</span>
       </div>
 
-      <section id="section_2-3" class="video_3 page row next-item-bottom bkg_heveadorp bkg_img nav_arrow_down nav_arrow_up nav_arrow_left nav_arrow_right heveadorp">
+      <section id="section_2-3" class="video_3 page row next-item-bottom bkg_heveadorp bkg_img nav_arrow_up nav_arrow_left nav_arrow_right heveadorp">
         <span class="page_size"></span><span class="page_name">section_2-3 video_3</span>
         <div class="fascione vert_cent clearfix">
             <!-- http://stackoverflow.com/questions/7737557/how-can-i-make-the-youtube-player-scale-to-the-width-of-the-page-but-also-keep-t/17465040#17465040 -->
@@ -180,11 +197,20 @@
               </div>
             </div>
             <article class="presentation left">
-              <h1 class="lichtbruin">Heveadorp</h1>
-              <p>In begin 2013 maakte ik mijn profielwerkstuk over mijn ex-woonplaats Heveadorp, een klein dorpje aan de Rijn waar vroeger de Heveafabriek stond. 
+              <h1 class="cyan">Heveadorp</h1>
+              <p class="kleiner">In begin 2013 maakte ik mijn profielwerkstuk over mijn ex-woonplaats Heveadorp, een klein dorpje aan de Rijn waar vroeger de Heveafabriek stond. 
               Ik was toen nog niet zo goed in kleurcorrectie en After Effects, maar kijk daar maar doorheen :)</p>
             </article>
         </div>
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">^videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">&gt;liederen</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">&gt;zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
     </section>
     <!-- END COLUMN 2 - VIDEO -->
@@ -210,9 +236,17 @@
             </div>
             <article class="presentation left">
               <h1 class="azur">Ik zoek een kamer in Utrecht</h1>
-              <p>Vorig jaar zocht ik een kamer in Utrecht, dus maakte ik dit filmpje in de hoop dat het een paar keer gedeeld zou worden. Echter ging hij toen viral in Nederland en werd ik overspoeld met reacties. Na mijn onverwachte week-of-fame heb ik dan ook een kamertje gevonden.</p>
+              <p class="kleiner bruingeel bruingeel_shadow">Vorig jaar zocht ik een kamer in Utrecht, dus maakte ik dit filmpje in de hoop dat het een paar keer gedeeld zou worden. Echter ging hij toen viral in Nederland en werd ik overspoeld met reacties. Na mijn onverwachte week-of-fame heb ik dan ook een kamertje gevonden.</p>
             </article>
         </div>
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">&lt;videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">&gt;zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
 
       <div id="section_3-split-1" class="split-horizontal bkg_kamer_controle">
@@ -236,13 +270,22 @@
               <p>Dit is een beginnetje voor een nummer wat ik ooit eens verder uit wil werken. (Er is ook al  <a target="_blank" href="https://www.facebook.com/favstinelli/videos/vb.654677094565585/818994518133841/?type=2&theater">een couplet</a>)</p>
             </article>
         </div>
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">&lt;videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">^liederen</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">&gt;zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
 
       <div id="section_3-split-2" class="split-horizontal bkg_controle_gymnasium">
         <span class="page_name">section_3-split-2</span>
       </div>
 
-      <section id="section_3-3" class="music_3 page row next-item-bottom bkg_gymnasium bkg_img nav_arrow_up nav_arrow_down nav_arrow_right">
+      <section id="section_3-3" class="music_3 page row next-item-bottom bkg_gymnasium bkg_img nav_arrow_up nav_arrow_left nav_arrow_right">
         <span class="page_size"></span><span class="page_name">section_3-3 music_3</span>
         <div class="fascione vert_cent clearfix">
             <!-- http://stackoverflow.com/questions/7737557/how-can-i-make-the-youtube-player-scale-to-the-width-of-the-page-but-also-keep-t/17465040#17465040 -->
@@ -256,11 +299,21 @@
             </div>
             <article class="presentation left">
               <h1 class="azur">Gymnasium Musical</h1>
-              <p>Toen we in de vierde klas eigenlijk een klassieke tragedie moesten opvoeren, kozen wij ervoor om een remake van High School Musical te maken. 
-              Daarvoor heb ik toen de liedjes geschreven en onze Oud-Griekse talentjes begeleid op piano.</p>
+              <p class="kleiner donkergroen donkergroen_shadow">Toen we in de vierde klas eigenlijk een klassieke tragedie moesten opvoeren, kozen wij ervoor om een remake van High School Musical te maken. 
+              Daarvoor heb ik toen de liedjes geschreven en onze Oud-Griekse talentjes<br/> begeleid op piano.</p>
             </article>
         </div>
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">&lt;videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">^liederen</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">&gt;zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
+
     </section>
     <!-- START COLUMN 3 - MUSIC -->
 
@@ -284,10 +337,18 @@
               </div>
             </div>
             <article class="presentation left">
-              <h1 class="lichtbruin">National Water Traineeship</h1>
+              <h1 class="donkergroen">National Water Traineeship</h1>
               <p>In deze video, in opdracht van het Nederlands Watertraineeship, heb ik potentiële watertrainees zichzelf voor doen stellen.</p>
             </article>
         </div>
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">&lt;videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">&lt;liederen</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
       
       <div id="section_4-split-1" class="split-horizontal bkg_traineeship_vinticious">
@@ -308,16 +369,25 @@
             </div>
             <article class="presentation left">
               <h1 class="lichtbruin">Vinticious Versions Tour announcement</h1>
-              <p>Nadat <a href="#section_2-2">onze videoclip voor Build That Buy That</a> niet werd gekozen als officiële videoclip, ben ik wel gevraagd om een promo te maken met de concertdata.</p>
+              <p>Nadat <a href="#section_2-2">onze videoclip voor Build That Buy That</a> niet werd gekozen als officiële videoclip, ben ik wel gevraagd om een promo te maken <br/>met de <br/>concertdata.</p>
             </article>
         </div>
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">&lt;videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">&lt;liederen</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">^zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
       
       <div id="section_4-split-2" class="split-horizontal bkg_vinticious_drostenburg">
         <span class="page_name">section_4-split-2</span>
       </div>
 
-      <section id="section_4-3" class="business_3 page row next-item-bottom bkg_drostenburg bkg_img nav_arrow_up nav_arrow_right">
+      <section id="section_4-3" class="business_3 page row next-item-bottom bkg_drostenburg bkg_img nav_arrow_up nav_arrow_left">
         <span class="page_size"></span><span class="page_name">section_4-3 - business_3</span>
         <div class="fascione vert_cent clearfix">
             <!-- http://stackoverflow.com/questions/7737557/how-can-i-make-the-youtube-player-scale-to-the-width-of-the-page-but-also-keep-t/17465040#17465040 -->
@@ -331,9 +401,18 @@
             </div>
             <article class="presentation left">
               <h1 class="lichtbruin">Drostenburg</h1>
-              <p>Samen met Linnet Deen en Laurens van der Geer maakte ik deze promotiefilm over Drostenburg, een expertisecentrum voor speciaal onderwijs en revalidatie. Zelf heb ik meegeschreven aan het script en heb ik de montage gedaan.</p>
+              <p class="kleiner">Samen met Linnet Deen en Laurens van der Geer maakte ik deze promotiefilm over Drostenburg, een expertisecentrum voor speciaal onderwijs en revalidatie. Zelf heb ik meegeschreven aan het script en heb ik de <br/>montage gedaan.</p>
             </article>
         </div>
+        <nav class="pocket_menu_nav_small bottom_right">
+          <ul>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_1-2'))">&lt;bio</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_2-1'))">&lt;videos</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_3-1'))">&lt;liederen</a></li>
+            <li class="cyan"><a target="_self" onclick="javascript:pageScroller($('#section_4-1'))">^zaken</a></li>
+            <li class="black"><a target="_self" onclick="javascript:pageScroller($('#section_1-1'))">&lt;home</a></li>
+          </ul>
+        </nav>
       </section>
 
     </section>

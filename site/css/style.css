@@ -89,7 +89,7 @@ GLOBAL GRID LAYOUT
 ******************************************************************/
 
 body{
-	width: 1000%;
+  width: 1000%;
 }
 
 .column {
@@ -102,14 +102,14 @@ body{
 }
 
 body .split-vertical {
- 	width: 10%;
+  width: 5%; /* smaller infra-columns - used to be 10% */
   display: inline;
   float: left;
   background-size: 100% 100%;
 }
 
 body .split-horizontal {
- 	height: 10%;
+  height: 10%;
   background-size: 100% 100%;
 }
 
@@ -118,8 +118,8 @@ PAGES & COLUMNS
 ******************************************************************/
 
 .column{
-	display: inline-block;
-	float: left;
+  display: inline-block;
+  float: left;
 }
 
 .page{
@@ -173,7 +173,7 @@ HOME PAGE STUFF
   text-shadow: 2px 2px 1px rgba(255,255,255,1);
 }
 
-.home_page_professional_nav ul, .home_page_site_nav ul, .pocket_menu_nav ul, .bio_professional_nav ul {
+.home_page_professional_nav ul, .home_page_site_nav ul, .pocket_menu_nav ul, .pocket_menu_nav_small ul, .bio_professional_nav ul {
   list-style-type: none;
 }
 
@@ -212,22 +212,40 @@ HOME PAGE STUFF
   text-shadow: 2px 2px 1px rgba(255,255,255,1);
 }
 
-.pocket_menu_nav {
+.home_page_site_nav, .pocket_menu_nav, .pocket_menu_nav_small {
+  z-index: 10;
+}
+
+.pocket_menu_nav, .pocket_menu_nav_small {
   position: absolute;
+  z-index: 10;
+}
+
+.pocket_menu_nav {
   font-size: 2em;
 }
 
-.pocket_menu_nav a {
+.pocket_menu_nav_small {
+  font-size: 1.3em;
+  text-shadow: 1px 1px blue;
+}
+
+.home_page_site_nav a, .pocket_menu_nav a, .pocket_menu_nav_small a {
   color: inherit;
 }
 
-.pocket_menu_nav a:hover {
+.pocket_menu_nav a:hover, .pocket_menu_nav_small a:hover {
   color: yellow;
 }
 
 .pocket_menu_nav.bottom_left {
   bottom: 5%;
   left: 3%;
+}
+
+.pocket_menu_nav_small.bottom_right {
+  bottom: 5%;
+  right: 1%;
 }
 
 .home_page_professional_nav {
@@ -402,6 +420,10 @@ article h1 {
     font-size: 1em;
   }
   
+  article p.kleiner {
+    font-size: 0.8em;
+  }
+  
   article h1 {
     font-size: 1.6em;
   }
@@ -431,6 +453,10 @@ DESKTOP
 
   article p {
     font-size: 1.1em;
+  }
+  
+  article p.kleiner {
+    font-size: 0.9em;
   }
   
   article h3 {
@@ -468,8 +494,12 @@ LARGE SCREEN TYPE SIZES
     font-size: 1.6em;
   }
   
+  article p.kleiner {
+    font-size: 1.3em;
+  }
+  
   article h3 {
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
   
   article h1 {
@@ -497,9 +527,13 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 ******************************************************************/
 .azur             { color: #3e94d1; }
 .groenstaat  { color: #2c9364; }
+.donkergroen  { color: #1d7373; }
+.donkergroen_shadow  { text-shadow: -1px -1px white; }
 .lichtbruin  { color: #d8cba9; }
 .cyan             { color: #11efc6; }
 .black           { color: black; }
+.bruingeel  { color: #ffd300; }
+.bruingeel_shadow  { text-shadow: -1px -1px #a68900; }
 
 .bkg_white  {
   background-color: white;
@@ -626,9 +660,6 @@ COLOR GRID AND DIVIDER BACKGROUNDS
   background-size: 100%;
   background-position-y: bottom;
   background-repeat: no-repeat;
-}
-.bkg_gymnasium  p {
-  color: #1d7373;
 }
 .bkg_vinticious {
   background:url('img/backgrounds/bkg_vinticious.jpg');

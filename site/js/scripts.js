@@ -4,7 +4,7 @@ var $currentPage = $('.home_page');
 var cssToInteger = function(pxString) {
   var result = null;
   try {
-    result = parseInt(pxString.substring(0,pxString.length-2));    
+    result = parseInt(pxString.substring(0, pxString.length - 2));    
   } catch (err) {}
   return result;
 }
@@ -26,10 +26,10 @@ var resizzer = function(e){
     var $this = $(this);
     var offset = $this.offset();
 
-    var spanContent = windowWidth+'*'+windowHeight;
-    spanContent += ' {top:'+ Math.floor(offset.top * 100) / 100 + ',left:'+Math.floor(offset.left * 100) / 100+'}';
+    var spanContent = windowWidth + '*' + windowHeight;
+    spanContent += ' {top:'+ Math.floor(offset.top * 100) / 100 + ',left:' + Math.floor(offset.left * 100) / 100 + '}';
     
-    $('.page_size',$this).text(spanContent);
+    $('.page_size', $this).text(spanContent);
   });
   return false;
 };
@@ -54,9 +54,9 @@ $(document).ready(function(){
   // find homepage
   setTimeout(function() {
     $('html,body').animate({
-      scrollTop:$('.home_page').offset().top,
-      scrollLeft:$('.home_page').offset().left
-    },100);
+      scrollTop: $('.home_page').offset().top,
+      scrollLeft: $('.home_page').offset().left
+    }, 100);
     return false;
   },5);
 });
@@ -67,7 +67,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }	
 else {
   $(document).ready(function(){
-    $('.column').css({'min-height':(($(document).height()))+'px'});
+    $('.column').css({'min-height': (($(document).height())) + 'px'});
   });
 }
 
@@ -79,10 +79,10 @@ var findTargetDiv = function(cssClass, backwards) {
     var timeLapse = 1200;
     
     var $container = ($(this).hasClass(cssClass)) ? $(this) : $(this).parents('.' + cssClass);
-    var $nextContainer = $container[searchMethod]('.'+cssClass+':first');
-    if ($nextContainer.length===0) {
+    var $nextContainer = $container[searchMethod]('.' + cssClass + ':first');
+    if ($nextContainer.length === 0) {
       timeLapse = 150;
-      $nextContainer = $container.parent().find('.'+cssClass+firstOrLast);
+      $nextContainer = $container.parent().find('.' + cssClass + firstOrLast);
     }
 
     // stop all players
