@@ -102,7 +102,7 @@ body{
 }
 
 body .split-vertical {
-  width: 5%; /* smaller infra-columns - used to be 10% */
+  width: 10%; 
   display: inline;
   float: left;
   background-size: 100% 100%;
@@ -194,7 +194,6 @@ HOME PAGE STUFF
   width: 100%;
   height: 100%;
   background-size: 100%;
-  background-size: 100%;
   display: block;
 }
 
@@ -223,6 +222,7 @@ HOME PAGE STUFF
 
 .pocket_menu_nav {
   font-size: 2em;
+  text-shadow: -1px -1px green;
 }
 
 .pocket_menu_nav_small {
@@ -234,13 +234,13 @@ HOME PAGE STUFF
   color: inherit;
 }
 
-.pocket_menu_nav a:hover, .pocket_menu_nav_small a:hover {
+.bio_professional_nav a:hover, .pocket_menu_nav a:hover, .pocket_menu_nav_small a:hover {
   color: yellow;
 }
 
 .pocket_menu_nav.bottom_left {
-  bottom: 5%;
-  left: 3%;
+  bottom: 1%;
+  left: 15%;
 }
 
 .pocket_menu_nav_small.bottom_right {
@@ -256,8 +256,11 @@ HOME PAGE STUFF
 .bio_professional_nav {
   position: absolute;
   font-size: 2em;
-  right: 15%;
-  
+  right: 7%;
+}
+
+.bio_professional_nav  ul{
+  line-height: 80px;
 }
 
 .home_page_site_nav {
@@ -266,16 +269,38 @@ HOME PAGE STUFF
   margin: 100px auto -100px;
 }
 
-.facebook_item a{
+.cv_melding {
+  position: absolute;
+  left: 17%;
+  bottom: 46%;
+  font-size: 1.5em;
+}
+
+.bio_professional_nav ul li a {
+  background-size: 45px;
+  background-repeat: no-repeat;
+  padding-left: 60px;
+  color: inherit;
+}
+
+.facebook_item a {
   background:url('img/navs/facebook_item.png');
 }
 
-.youtube_item a{
+.youtube_item a {
   background:url('img/navs/youtube_item.png');
 }
 
-.linkedin_item a{
+.linkedin_item a {
   background:url('img/navs/linkedin_item.png');
+}
+
+.soundcloud_item a {
+  background:url('img/navs/soundcloud_item.png');
+}
+
+.twitter_item a {
+  background:url('img/navs/twitter_item.png');
 }
 
 /******************************************************************

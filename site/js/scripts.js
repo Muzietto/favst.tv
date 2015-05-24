@@ -9,19 +9,20 @@ var cssToInteger = function(pxString) {
   return result;
 }
 
-/* add window height as min-height to all pages and splitters*/
+/* add window height as min-height to all pages and splitters */
 var resizzer = function(e){
   var multiplier = (Modernizr.touch ? 0.91 : 1)
   
   var windowHeight = Math.floor($(window).height() * multiplier);
   var windowWidth = window.innerWidth;
-  var splitMinHeight = Math.floor(windowHeight/5);
+  var splitMinHeight = Math.floor(windowHeight / 5);
 
   $('.row').css({'min-height' : windowHeight + 'px'});
   $('.split-vertical').css({'min-height' : windowHeight + 'px' });
   $('.split-horizontal').css({'min-height' : splitMinHeight + 'px' });
 
   // temporary display - TODO: remove when site is ready
+  /*
   $('.page').each(function() {
     var $this = $(this);
     var offset = $this.offset();
@@ -31,6 +32,7 @@ var resizzer = function(e){
     
     $('.page_size', $this).text(spanContent);
   });
+  */
   return false;
 };
 
@@ -43,8 +45,8 @@ function resizedw(){
 }
 
 window.onresize = function() {
-    clearTimeout(resizing);
-    resizing = setTimeout(resizedw, 100);
+  clearTimeout(resizing);
+  resizing = setTimeout(resizedw, 100);
 };
 
 $(document).ready(function(){
@@ -131,6 +133,8 @@ var pageScroller = function($targetDiv) {
 }
 
 $(document).ready(function() {
+  // REMOVE WIP-RELATED INFORMATION
+  $('span.page_name').hide();
 
   $('.nav_arrow_up')
     .prepend($('<div/>', {class:'absolute w100pc'})
