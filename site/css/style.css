@@ -84,6 +84,8 @@ GENERAL
 
 .right { float: right; }
 
+.bold { font-weight: bold; }
+
 /******************************************************************
 GLOBAL GRID LAYOUT 
 ******************************************************************/
@@ -240,12 +242,12 @@ HOME PAGE STUFF
 
 .pocket_menu_nav.bottom_left {
   bottom: 1%;
-  left: 15%;
+  left: 8%;
 }
 
 .pocket_menu_nav_small.bottom_right {
   bottom: 5%;
-  right: 1%;
+  right: 3%;
 }
 
 .home_page_professional_nav {
@@ -271,9 +273,19 @@ HOME PAGE STUFF
 
 .cv_melding {
   position: absolute;
-  left: 17%;
-  bottom: 46%;
+  left: 4%;
+  top: 0%;
   font-size: 1.5em;
+  width: 36%;
+}
+
+.cv_melding h2 {
+  margin-bottom: 0px;
+}
+
+.cv_melding p {
+  margin-top: 3%;
+  line-height: 1.2em;
 }
 
 .bio_professional_nav ul li a {
@@ -551,6 +563,7 @@ LARGE SCREEN TYPE SIZES
 COLOR GRID AND DIVIDER BACKGROUNDS
 ******************************************************************/
 .azur             { color: #3e94d1; }
+.crimson             { color: #e92577; }
 .groenstaat  { color: #2c9364; }
 .donkergroen  { color: #1d7373; }
 .donkergroen_shadow  { text-shadow: -1px -1px white; }
