@@ -78,6 +78,7 @@ var findTargetDiv = function(cssClass, backwards) {
   var searchMethod = (backwards) ? 'prevAll' : 'nextAll';
 
   return function(e) {
+    //debugger;
     var timeLapse = 1200;
     
     var $container = ($(this).hasClass(cssClass)) ? $(this) : $(this).parents('.' + cssClass);
@@ -101,11 +102,12 @@ var findTargetDiv = function(cssClass, backwards) {
         scrollLeft: $nextContainer.offset().left 
       };
 
-    $('html, body').animate(scrollObject, timeLapse);
-
-    // adjust url hash in page history
-    location.hash = $currentPage.prop('id');
-    return false;  
+    $('html, body').animate(scrollObject, timeLapse, function(){
+      // adjust url hash in page history
+      setTimeout(function(){
+        location.hash = $currentPage.prop('id');
+      },5);
+    });
   }
 }
 
@@ -118,6 +120,7 @@ var verticalScroller = function(backwards) {
 
 // click handler for .page and .home_page_site_nav
 var pageScroller = function($targetDiv) {
+  //debugger;
   $nextContainer = $targetDiv || $(this);
   $currentPage = $nextContainer;
 
@@ -125,11 +128,12 @@ var pageScroller = function($targetDiv) {
       scrollTop: $nextContainer.offset().top, 
       scrollLeft: $nextContainer.offset().left 
     };
-  $('html, body').animate(scrollObject, 1200);
-  
-  // adjust url hash in page history
-  location.hash = $currentPage.prop('id');
-  //return false;
+  $('html, body').animate(scrollObject, 1200, function(){
+    // adjust url hash in page history
+    setTimeout(function(){
+      location.hash = $currentPage.prop('id');
+    },5);
+  });
 }
 
 $(document).ready(function() {
@@ -165,11 +169,12 @@ $(document).ready(function() {
   $('.next-item-right').hammer().bind('swipeleft', horizontalScroller()); //findNextHorizontalContainer)
   $('.next-item-right').hammer().bind('swiperight', horizontalScroller(true)); //findPreviousHorizontalContainer)
 
+  /*
   $('.home_page_site_nav li.video_item').click(function(){ pageScroller($('section.video_1')); });
   $('.home_page_site_nav li.music_item').click(function(){ pageScroller($('section.music_1')); });
   $('.home_page_site_nav li.business_item').click(function(){ pageScroller($('section.business_1')); });
   $('.home_page_site_nav li.bio_item').click(function(){ pageScroller($('section.bio_1')); });
-
+*/
 });
 
 
