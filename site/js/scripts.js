@@ -18,7 +18,7 @@ var resizzer = function(e){
   var splitMinHeight = Math.floor(windowHeight / 5);
 
   $('.row').css({'min-height' : windowHeight + 'px'});
-  $('.split-vertical').css({'min-height' : windowHeight + 'px' });
+  $('.split-vertical').css({'min-height' : (3 * windowHeight + 2 * splitMinHeight) + 'px' });
   $('.split-horizontal').css({'min-height' : splitMinHeight + 'px' });
 
   // temporary display - TODO: remove when site is ready

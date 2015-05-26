@@ -626,7 +626,7 @@ COLOR GRID AND DIVIDER BACKGROUNDS
   background-color: #ffba00;
 }
 .bkg_interreel_destaat {
-  background:url('img/backgrounds/interreel_destaat.png');
+  background:url('img/backgrounds/bkg_interreel_destaat.jpg');
 }
 .bkg_grey_destaat {
   background:url('img/backgrounds/grey_destaat.png');
@@ -634,11 +634,44 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 .bkg_kamer_interreel {
   background:url('img/backgrounds/kamer_interreel.png');
 }
+.bkg_kamer_traineeship {
+  background:url('img/backgrounds/bkg_kamer_traineeship.png');
+}
+.bkg_controle_gymnasium {
+  background:url('img/backgrounds/bkg_controle_gymnasium.png');
+}
+.bkg_kamer_controle {
+  background:url('img/backgrounds/bkg_kamer_controle.png');
+}
+.bkg_interreeel_kamer {
+  background:url('img/backgrounds/bkg_interreeel_kamer.png');
+}
+.bkg_traineeship_vinticious {
+  background:url('img/backgrounds/bkg_traineeship_vinticious.png');
+}
+.bkg_bio_video {
+  background:url('img/backgrounds/bkg_bio_video.png');
+}
+.bkg_video_music {
+  background:url('img/backgrounds/bkg_video_music.png');
+}
+.bkg_music_business {
+  background:url('img/backgrounds/bkg_music_business.png');
+}
+.bkg_schema_bio1 {
+  background:url('img/backgrounds/bkg_schema_bio1.png');
+}
+.bkg_bio1_bio2 {
+  background:url('img/backgrounds/bkg_bio1_bio2.png');
+}
+.bkg_vinticious_drostenburg {
+  background:url('img/backgrounds/bkg_vinticious_drostenburg.png');
+}
 .bkg_destaat_pink {
   background:url('img/backgrounds/destaat_pink.png');
 }
 .bkg_destaat_heveadorp {
-  background:url('img/backgrounds/destaat_heveadorp.png');
+  background:url('img/backgrounds/bkg_destaat_heveadorp.png');
 }
 .bkg_turquoise_destaat {
   background:url('img/backgrounds/turquoise_destaat.png');
