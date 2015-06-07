@@ -1,3 +1,13 @@
+/*
+	FAVST.TV - Multi-device responsive navigational interface
+	Author: Marco Faustinelli (contacts@faustinelli.net)
+	Web: http://faustinelli.net/
+	     http://faustinelli.wordpress.com/
+  Source code: https://github.com/Muzietto/favst.tv
+	Version: 1.1
+
+	The MIT License - Copyright (c) 2015 FAVST.TV Project
+*/
 /******************************************************************
 ******************************************************************
 BASE STYLE SHEET
@@ -86,32 +96,48 @@ GENERAL
 
 .bold { font-weight: bold; }
 
+/* VERTICAL SCROLL FOR Smartphones (portrait or landscape) ----------- */
+  html.is-smartphone body .split-vertical {
+    display: none;
+  }
+
+  html.is-smartphone body .split-horizontal {
+    display: block;
+    background-size: 100% 100%;
+  }
+
+  html.is-smartphone .column{
+    display: block;
+  }
+
+/* GRID BEYOND Smartphones (portrait or landscape) ----------- */
 /******************************************************************
 GLOBAL GRID LAYOUT 
 ******************************************************************/
 
-body{
+html.is-tablet-desktop body{
   width: 1000%;
 }
 
-.column {
- 	width: 10%;
+html.is-tablet-desktop .column {
+  width: 10%;
   /*border: 2px solid yellow;*/
 }
 
-.row {
+html.is-tablet-desktop .row {
   /*border: 2px solid green;*/
 }
 
-body .split-vertical {
+html.is-tablet-desktop body .split-vertical {
   width: 10%; 
   display: inline;
   float: left;
   background-size: 100% 100%;
 }
 
-body .split-horizontal {
+html.is-tablet-desktop body .split-horizontal {
   height: 10%;
+  display: block;
   background-size: 100% 100%;
 }
 
@@ -119,13 +145,15 @@ body .split-horizontal {
 PAGES & COLUMNS
 ******************************************************************/
 
-.column{
+html.is-tablet-desktop .column{
   display: inline-block;
   float: left;
 }
+/* END OF GRID BEYOND Smartphones (portrait or landscape) ----------- */
 
-.page{
+.page {
   position: relative;
+  height: 100%;
 }
 
 div.left-arrow, div.right-arrow {
@@ -153,8 +181,8 @@ HOME PAGE STUFF
   background:url('img/draw/favst_logo.png');
   background-size: 100% 100%;
   margin: 0 auto;
-  width:460px;
-  height:300px;
+  width:290px;
+  height:180px;
   position: relative;
 }
 
@@ -169,10 +197,29 @@ HOME PAGE STUFF
 
 .favst_logo span {
   position: absolute;
-  margin-left: 35px;
-  bottom: -60px;
-  font-size: 1.6em;
+  margin-left: 4px; /* smaller screens */
+  bottom: -40px; /* smaller screens */
+  font-size: 1.3em; /* smaller screens */
   text-shadow: 2px 2px 1px rgba(255,255,255,1);
+}
+
+/* homepage float-left layout for landscape smartphones */
+@media screen and (orientation:landscape) {
+
+  html.is-smartphone .favst_logo {
+    margin: -30px 10px;
+    float: left;
+  }
+
+  html.is-smartphone .home_page_site_nav {
+    margin: -30px 10px;
+    width: 175px;
+    float: left;  
+  }
+
+  html.is-smartphone .home_page_professional_nav {
+    margin: -17px auto 90px;
+  }
 }
 
 .home_page_professional_nav ul, .home_page_site_nav ul, .pocket_menu_nav ul, .pocket_menu_nav_small ul, .bio_professional_nav ul {
@@ -184,10 +231,14 @@ HOME PAGE STUFF
   text-align: center;
 }
 
+.home_page_professional_nav ul:first-child {
+  margin-left: 0px;
+}
+
 .home_page_professional_nav ul li {
   width: 60px;
   height: 60px;
-  margin-left: 40px;
+  margin-left: 15px; /* smaller screens */
   background-size: 100% 100%;
   cursor: pointer;
 }
@@ -199,10 +250,6 @@ HOME PAGE STUFF
   display: block;
 }
 
-.home_page_professional_nav ul:first-child {
-  margin-left: 0px;
-}
-
 .home_page_site_nav ul li {
   width: 150px;
   height: 30px;
@@ -211,6 +258,8 @@ HOME PAGE STUFF
   font-weight: bold;
   font-size: 1.5em;
   text-shadow: 2px 2px 1px rgba(255,255,255,1);
+  margin-left: -20px; /* smaller screens */
+  margin-bottom: 10px; /* smaller screens */
 }
 
 .home_page_site_nav, .pocket_menu_nav, .pocket_menu_nav_small {
@@ -243,32 +292,34 @@ HOME PAGE STUFF
 .pocket_menu_nav.bottom_left {
   bottom: 1%;
   left: 8%;
+  margin-bottom: -15px; /* smaller screens */
 }
 
 .pocket_menu_nav_small.bottom_right {
-  bottom: 5%;
+  bottom: 0%;  /* smaller screens */
   right: 3%;
 }
 
 .home_page_professional_nav {
-  width: 400px;
-  margin: 15px auto 120px;
+  width: 310px;  /* smaller screens */
+  margin: -10px auto 90px;  /* smaller screens */
 }
 
 .bio_professional_nav {
   position: absolute;
-  font-size: 2em;
+  font-size: 1.6em; /* smaller screens */
   right: 7%;
+  margin-top: -35px;
 }
 
 .bio_professional_nav  ul{
-  line-height: 80px;
+  line-height: 40px; /* smaller screens */
 }
 
 .home_page_site_nav {
   /*border: 1px solid blue;*/
-  width: 650px;
-  margin: 100px auto -100px;
+  width: 330px; /* smaller screens */
+  margin: 50px auto -95px; /* smaller screens */
 }
 
 .cv_melding {
@@ -277,6 +328,7 @@ HOME PAGE STUFF
   top: 0%;
   font-size: 1.5em;
   width: 36%;
+  display: none; /* smaller screens */
 }
 
 .cv_melding h2 {
@@ -289,9 +341,9 @@ HOME PAGE STUFF
 }
 
 .bio_professional_nav ul li a {
-  background-size: 45px;
+  background-size: 32px; /* smaller screens */
   background-repeat: no-repeat;
-  padding-left: 60px;
+  padding-left: 43px; /* smaller screens */
   color: inherit;
 }
 
@@ -348,6 +400,8 @@ a.scroll-up:hover {
 
 a.scroll-down {
   color: #3e94d1;
+  margin-left: 10%;  /* smaller screens */ 
+  font-size: 115px;  /* smaller screens */
 }
 
 a.scroll-down:hover {
@@ -400,6 +454,11 @@ article h3 {
 
 article h1 {
   font-size: 1.4em; /* smaller screen */
+  margin-top: -45px;
+}
+
+article.presentation p { /* smaller screen */
+  display: none;
 }
 
 /* http://stackoverflow.com/questions/7737557/how-can-i-make-the-youtube-player-scale-to-the-width-of-the-page-but-also-keep-t/17465040#17465040 */
@@ -425,22 +484,26 @@ article h1 {
 
 /******************************************************************
 
-	END OF SMARTPHONE AREA
-  TODO: try to discriminate between portrait and landscape
-  @media only screen and (orientation: landscape) {}
-
-  TODO: verify usage of Modernizr .touch
-  .touch .your-element {}
+	END OF SMARTPHONE PORTRAIT AREA
 	
 ******************************************************************/	
 
+@media screen and (max-width: 700px) and (orientation:landscape) {
+  .vert_cent, .youtube_container {
+    margin-top: 0px !important;
+  }
+}
 /******************************************************************
 
-	BOTH DESKTOPS AND TABLETS USE THESE...
+	LANDSCAPE SMARTPHONES, DESKTOPS AND TABLETS USE THESE...
   NB: youtube and text are set ASIDE
 	
 ******************************************************************/	
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 520px) {
+
+  .pocket_menu_nav_small.bottom_right {
+    bottom: 5%;
+  }
 
   .youtube_container {
     width: 52%;
@@ -463,8 +526,9 @@ article h1 {
   
   article h1 {
     font-size: 1.6em;
+    margin-top: 0px;
   }
-  
+
   a.scroll-up, a.scroll-down, a.scroll-left, a.scroll-right {
     font-size: 4em;
   }
@@ -479,6 +543,73 @@ article h1 {
 
 }/*****end tablet mobile styles******/
 
+/* landscape smartphones still had no p1 and other special stuff */
+@media screen and (min-width: 600px) {
+
+  .pocket_menu_nav.bottom_left {
+    margin-bottom: none;
+  }
+
+  .cv_melding {
+    display: block;
+  }
+
+  .bio_professional_nav ul li a {
+    background-size: 45px;
+    padding-left: 60px;
+  }
+
+  .bio_professional_nav {
+    font-size: 2em;
+    margin-top: none;
+  }
+
+  .bio_professional_nav  ul{
+    line-height: 80px;
+  }
+
+  .home_page_site_nav {
+    width: 650px;
+    margin: 100px auto -100px;
+  }
+
+  .home_page_site_nav ul li {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+
+  .favst_logo {
+    margin: 0 auto;
+    width:460px;
+    height:300px;
+  }
+
+  .favst_logo span {
+    margin-left: 35px;
+    bottom: -60px;
+    font-size: 1.6em;
+  }
+
+  .home_page_professional_nav {
+    width: 400px;
+    margin: 15px auto 120px;
+  }
+
+  .home_page_professional_nav ul li {
+    width: 60px;
+    height: 60px;
+    margin-left: 40px;
+  }
+
+  a.scroll-down {
+    margin-left: 44%;
+    font-size: 4em;
+  }
+
+  article.presentation p {
+    display: block;
+  }
+}
 /*****************************************************************
 ******************************************************************
 ******************************************************************
@@ -686,79 +817,56 @@ COLOR GRID AND DIVIDER BACKGROUNDS
 }
 .bkg_destaat {
   background:url('img/backgrounds/bkg_destaat.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_interreel {
   background:url('img/backgrounds/bkg_interreel.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_kamer {
   background:url('img/backgrounds/bkg_kamer.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_vissen {
   background:url('img/backgrounds/bkg_vissen.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_schema { /* this is the homepage!!! */
   background:url('img/backgrounds/bkg_schema.jpg');
-  background-size: 100%;
-  /*background-position-y: bottom;*/
-  background-repeat: no-repeat;
 }
 .bkg_bio1 {
   background:url('img/backgrounds/bkg_bio1.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_bio2 {
   background:url('img/backgrounds/bkg_bio2.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_gymnasium {
   background:url('img/backgrounds/bkg_gymnasium.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_vinticious {
   background:url('img/backgrounds/bkg_vinticious.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_drostenburg {
   background:url('img/backgrounds/bkg_drostenburg.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_traineeship {
   background:url('img/backgrounds/bkg_traineeship.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_controle {
   background:url('img/backgrounds/bkg_controle.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
 }
 .bkg_heveadorp {
   background:url('img/backgrounds/bkg_heveadorp.jpg');
-  background-size: 100%;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
+}
+
+@media screen and (orientation:portrait) {
+  .page {
+    background-size: auto 100%;
+    background-position-x: left;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  .page {
+    background-size: 100%;
+    background-position-y: bottom; /* FF won't notice */
+    background-repeat: no-repeat;
+  }
 }
