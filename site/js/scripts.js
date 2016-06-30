@@ -31,7 +31,7 @@ var FAVST = function(){
     $('.split-horizontal').css({'min-height' : splitMinHeight + 'px' });
 
     // temporary display - TODO: remove when site is ready
-    /*
+    
     $('.page').each(function() {
       var $this = $(this);
       var offset = $this.offset();
@@ -41,7 +41,7 @@ var FAVST = function(){
       
       $('.page_size', $this).text(spanContent);
     });
-    */
+    
     return false;
   };
 

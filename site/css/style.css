@@ -651,7 +651,54 @@ LARGE SCREEN TYPE SIZES
 
 /* END DESKTOP 1000px */	
 
+/******************************************************************
+IPAD portrait && landscape
+******************************************************************/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width : 1024px) {
 
+  .bkg_destaat {
+    background:url('img/backgrounds/bkg_destaat_ipad.jpg');
+  }
+  .bkg_interreel {
+    background:url('img/backgrounds/bkg_interreel_ipad.jpg');
+  }
+  .bkg_kamer {
+    background:url('img/backgrounds/bkg_kamer_ipad.jpg');
+  }
+  .bkg_vissen {
+    background:url('img/backgrounds/bkg_vissen_ipad.jpg');
+  }
+  .bkg_schema { /* this is the homepage!!! */
+    background:url('img/backgrounds/bkg_schema_ipad.jpg');
+  }
+  .bkg_bio1 {
+    background:url('img/backgrounds/bkg_bio1_ipad.jpg');
+  }
+  .bkg_bio2 {
+    background:url('img/backgrounds/bkg_bio2.jpg');
+  }
+  .bkg_gymnasium {
+    background:url('img/backgrounds/bkg_gymnasium_ipad.jpg');
+  }
+  .bkg_vinticious {
+    background:url('img/backgrounds/bkg_vinticious_ipad.jpg');
+  }
+  .bkg_drostenburg {
+    background:url('img/backgrounds/bkg_drostenburg_ipad.jpg');
+  }
+  .bkg_traineeship {
+    background:url('img/backgrounds/bkg_traineeship_ipad.jpg');
+  }
+  .bkg_controle {
+    background:url('img/backgrounds/bkg_controle_ipad.jpg');
+  }
+  .bkg_heveadorp {
+    background:url('img/backgrounds/bkg_heveadorp_ipad.jpg');
+  }
+}
+/* end ipad */
 @media screen and (min-width: 1300px) {
 
   body{
