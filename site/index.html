@@ -41,7 +41,35 @@
     body{
       font-family:'walsheim',sans-serif;
       letter-spacing:.2em;
-      background:#A4A3A4
+      background:#FFFFFF
+    }
+
+    a {
+      color: #FF00A4;
+    }
+    
+    .pc100 {
+      width: 100%;
+    }
+    
+    p.container {
+      font-size: 26px;
+    }
+    
+    label.link {
+      font-size: 26px;
+      width:45%;
+      display: inline-block;
+      text-align: center;
+      margin: 15px 2px;
+    }
+    
+    p.centered {
+      text-align: center;
+    }
+    
+    .h3 {
+      font-size: 32px;
     }
     
     .under_construction_bkg {
@@ -84,6 +112,11 @@
     DESKTOP
     *****************************************************************/
     @media screen and (min-width: 800px) {
+      .central_column {
+        width: 500px;
+        margin: 0 auto;
+      }
+      
       .under_construction_bkg {
         width:400px;
         height:400px;
@@ -97,12 +130,45 @@
     </style>
   </head>
 
-  <body class="bkg_whitesmoke">
-  <div data-role="page" id="underconstruction">
-      <div class="under_construction_sign">
+  <body class="">
+  <div data-role="page" class="central_column">
+      <p class="container centered">Welkom op de website van</p>
+      <img class="pc100" src="img/gif1.gif" alt="Ik als Maker">
+      <p class="container centered">oftewel Marie-Anne Faustinelli.</p>
+      <p class="container centered">een vers van de HKU afgestudeerde contentmaker.</p>
+      <p class="container centered">(en regisseur van <a href="http://maizd.nl" target="_blank">Maar Als Iedereen Zo Denkt</a>)</p>
+
+      <p class="container centered">op dit moment is deze website nog in de maak, 
+      maar hieronder wel even wat handige details.</p>
+
+      <div>
+      <label class="link"><a href="doc/curricula/favst_cv.pdf" target="_blank">CV</a></label>
+      <label class="link"><a href="https://www.facebook.com/favstinelli/" target="_blank">facebook</a></label>
+      <label class="link"><a href="https://www.youtube.com/user/MarieAnneRocks" target="_blank">youtube</a></label>
+      <label class="link"><a href="http://maizd.nl" target="_blank">MAIZD</a></label>      
       </div>
-      <div class="under_construction_bkg">
-      </div>
+
+      <h3 class="h3">bio</h3>
+      <p class="container">
+      Na 4 jaar Audiovisuele Media aan de HKU en 22 jaar tekenfilmpjes 
+      kijken ben ik er achter dat lange speelfilms of documentaires 
+      niet voor mij weg zijn gelegd.</p>
+      <img class="pc100" src="img/gif2.gif" alt="Favst Bumper">
+      <p class="container">
+      Mijn projecten heb ik het liefst zoals mijn concentratieboog: lekker kort. 
+      Promo’s, uitlegvideo’s, muzieknummers, animaties, 
+      visuals, teksten, illustraties, spulletjes; 
+      ik maak het allemaal, want zelf kan ik er niet zo goed tussen kiezen.</p>
+      <p class="container">
+      En daarom werk ik graag in opdracht van iemand die een idee heeft waar ik achter sta. 
+      Dan kan ik een vorm bedenken, wat meestal resulteert 
+      in iets sympathiek, grappig’s, trippy’s of juist iets simpels. 
+      Het is óf heel duidelijk, óf gewoon vet. 
+      Wat er maar nodig is om de kijker te informeren of in actie te laten komen.</p>
+      <h3 class="h3">contact</h3>
+      <p class="container">Marie-Anne Faustinelli</p>
+      <p class="container">marieannefausti@yahoo.com</p>
+      <p class="container">06-29736755</p>
   </div>
   
   <!--script type='text/javascript' src="js/scripts.js"></script-->
